@@ -9,6 +9,7 @@
 <p align="left">
 <a href="https://twitter.com/baboosh315" target="blank"><img align="center" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/twitter.svg" alt="baboosh315" height="30" width="40" /></a>
 <a href="https://linkedin.com/in/https://www.linkedin.com/in/babas-muhammad-a76224283/" target="blank"><img align="center" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/linked-in-alt.svg" alt="https://www.linkedin.com/in/babas-muhammad-a76224283/" height="30" width="40" /></a>
+<a href="https://stackoverflow.com/users/https://stackoverflow.com/users/22310634/muhammad-ibrahim-shehu" target="blank"><img align="center" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/stack-overflow.svg" alt="https://stackoverflow.com/users/22310634/muhammad-ibrahim-shehu" height="30" width="40" /></a>
 <a href="https://instagram.com/mis6_17" target="blank"><img align="center" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/instagram.svg" alt="mis6_17" height="30" width="40" /></a>
 <a href="https://www.leetcode.com/https://leetcode.com/baboosh/" target="blank"><img align="center" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/leet-code.svg" alt="https://leetcode.com/baboosh/" height="30" width="40" /></a>
 </p>
