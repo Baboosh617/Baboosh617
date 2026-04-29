@@ -1,4 +1,3 @@
-
 <h1 align="center">Hello, my name is Muhammad Ibrahim Shehu</h1>
 <h3 align="center">Software developer</h3>
 
