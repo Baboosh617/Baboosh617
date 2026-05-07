@@ -332,11 +332,11 @@
         }
         .contact-link:hover { border-color: var(--accent); transform: translateY(-3px); box-shadow: var(--shadow-lg); }
         .contact-link svg { width: 18px; height: 18px; }
-        .contact-cta { font-family: 'JetBrains Mono', monospace; font-size: 0.78rem; color: var(--text-muted); margin-bottom: 24px; }
+        .contact-cta { font-family: 'JetBrains Mono', monospace; font-size: 1.0rem; color: var(--text-muted); margin-bottom: 24px; }
 
         .terminal-toggle {
             display: inline-flex; align-items: center; gap: 6px;
-            font-family: 'JetBrains Mono', monospace; font-size: 0.75rem; color: var(--text-muted);
+            font-family: 'JetBrains Mono', monospace; font-size: 0.9rem; color: var(--text-muted);
             background: none; border: 1px solid var(--border); padding: 8px 16px;
             border-radius: 6px; cursor: pointer; transition: all 0.2s;
         }
