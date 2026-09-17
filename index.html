@@ -76,37 +76,8 @@
                     </div>
 
                     <div class="projects-grid">
-                        <!-- VULOR -->
-                        <div class="project-card reveal d1" data-project="0">
-                            <div class="project-img-wrapper">
-                                <img src="Assets/images/storelaunch.png" alt="VULOR E-commerce" class="project-img" loading="lazy">
-                            </div>
-                            <div class="project-body">
-                                <span class="project-tag tag-fullstack">Full Stack</span>
-                                <h3 class="project-name">VULOR — E-commerce Platform</h3>
-                                <p class="project-what">A full-stack marketplace built for students who needed a reliable way to buy and sell within their community.</p>
-                                <p class="project-learned">"This worked… eventually. Django's learning curve is real."</p>
-                                <div class="project-stack">
-                                    <span class="tech-chip">Django</span>
-                                    <span class="tech-chip">Python</span>
-                                    <span class="tech-chip">Bootstrap</span>
-                                    <span class="tech-chip">PostgreSQL</span>
-                                </div>
-                                <div class="project-link-row">
-                                    <a href="https://vulor-1.onrender.com/" class="project-link demo">
-                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
-                                        Demo
-                                    </a>
-                                    <a href="https://github.com/Baboosh617/VULOR/blob/store_launch/" class="project-link gh">
-                                        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
-                                        GitHub
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-
                         <!-- Grid Stability ML -->
-                        <div class="project-card reveal d2" data-project="1">
+                        <div class="project-card reveal d1" data-project="0">
                             <div class="project-img-wrapper">
                                 <img src="Assets/images/grid.png" alt="Grid Stability ML" class="project-img" loading="lazy">
                             </div>
@@ -135,7 +106,7 @@
                         </div>
 
                         <!-- Nexus Canvas -->
-                        <div class="project-card reveal d3" data-project="2">
+                        <div class="project-card reveal d2" data-project="1">
                             <div class="project-img-wrapper">
                                 <img src="https://image.qwenlm.ai/public_source/e045a0f4-94f6-462d-a003-16e1ee9e9e87/19d365942-b64a-4be6-b902-a50aab6ee8c6.png" alt="Nexus Canvas" class="project-img" loading="lazy">
                             </div>
@@ -421,18 +392,6 @@
         // ===== PROJECT MODAL (V1) =====
         const projectData = [
             {
-                img: 'Assets/images/storelaunch.png',
-                tag: 'Full Stack',
-                tagClass: 'tag-fullstack',
-                title: 'VULOR — E-commerce Platform',
-                what: 'A full-stack marketplace built for students who needed a reliable way to buy and sell within their community. Handles user auth, product catalog, cart system, and order management.',
-                why: 'Students in my campus didn\'t have a good platform for peer-to-peer commerce. Existing solutions were either too complex or didn\'t exist locally.',
-                learned: 'Django\'s MVT pattern is powerful once you understand it. Building a real app taught me more about architecture than any tutorial could. This worked… eventually.',
-                stack: ['Django', 'Python', 'Bootstrap', 'PostgreSQL', 'REST API'],
-                demo: 'https://vulor-1.onrender.com/',
-                gh: 'https://github.com/Baboosh617/VULOR/blob/store_launch/'
-            },
-            {
                 img: 'Assets/images/grid.png',
                 tag: 'Machine Learning',
                 tagClass: 'tag-ml',
@@ -536,11 +495,13 @@
                 if (!c) return;
 
                 const cmds = {
-                    help: { type: 'out', text: 'Available commands:\n  help       → show this message\n  contact    → get contact info\n  github     → open GitHub\n  linkedin   → open LinkedIn\n  whoami     → about me\n  clear      → clear terminal' },
+                    help: { type: 'out', text: 'Available commands:\n  help       → show this message\n  contact    → get contact info\n  github     → open GitHub\n  linkedin   → open LinkedIn\n  whoami     → about me\n  projects   → list projects\n  skill      → show skill check\n  clear      → clear terminal' },
                     contact: { type: 'ok', text: '📧 babasmuhammad617@gmail.com' },
                     github: { type: 'ok', text: '🔗 Opening GitHub…', action: () => window.open('https://github.com/baboosh617', '_blank') },
                     linkedin: { type: 'ok', text: '🔗 Opening LinkedIn…', action: () => window.open('#', '_blank') },
                     whoami: { type: 'out', text: 'Muhammad Ibrahim\nFrontend Developer → AI/ML Engineer\nComputer Engineering student' },
+                    projects: { type: 'out', text: Array.from(projectData, p => `- ${p.title}`).join('\n') },
+                    skill: { type: 'out', text: 'GitHub: https://github.com/baboosh617\nSkills: Frontend, Backend, ML, Python, JavaScript, Django, PostgreSQL' },
                     clear: { type: 'clear' }
                 };
 
