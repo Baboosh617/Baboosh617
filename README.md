@@ -4,7 +4,7 @@ Backend-leaning full-stack developer. I build production-shaped web apps — aut
 
 - **[Grid](https://github.com/Baboosh617/Grid)** — ML classification model predicting power grid stability (Python, scikit-learn)
 - **[Pythagora](https://github.com/Baboosh617/Pythagora)** — geometry calculator built with PyQt5
-- **[Gitbro](https://github.com/Baboosh617/Gitbro)** — Kotlin project
+- **[Gitbro](https://github.com/Baboosh617/Gitbro)** — desktop GitHub profile viewer: search any user to see their profile and top repos by stars (Kotlin, Swing, GitHub REST API), with an Android port in Jetpack Compose
 
 **Stack:** Python (Django, FastAPI) · JavaScript · PostgreSQL · Redis/Celery · Docker
 
