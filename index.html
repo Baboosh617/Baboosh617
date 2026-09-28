@@ -23,6 +23,9 @@
 
     <link rel="stylesheet" href="style.css">
     <script>document.documentElement.classList.add('js');</script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollTrigger.min.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/MotionPathPlugin.min.js" defer></script>
 </head>
 <body>
     <a href="#main" class="skip-link">Skip to main content</a>
@@ -31,6 +34,76 @@
     <div id="loader" aria-hidden="true">
         <div class="loader-percent" id="loader-percent">0</div>
         <div class="loader-track"><div class="loader-fill" id="loader-fill"></div></div>
+    </div>
+
+    <!-- Ocean backdrop: decorative, fixed behind everything (see OCEAN in style.css) -->
+    <div class="ocean" id="ocean" aria-hidden="true">
+        <div class="ocean__surface"></div>
+        <div class="ocean__rays"><div></div></div>
+        <div class="ocean__lights"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div>
+        <div class="ocean__abyss"></div>
+        <div class="ocean__fish">
+            <div class="fish">
+                <div class="fish__skeleton"></div>
+                <div class="fish__inner">
+                    <div class="fish__body"></div>
+                    <div class="fish__body"></div>
+                    <div class="fish__body"></div>
+                    <div class="fish__body"></div>
+                    <div class="fish__head"></div>
+                    <div class="fish__head fish__head--2"></div>
+                    <div class="fish__head fish__head--3"></div>
+                    <div class="fish__head fish__head--4"></div>
+                    <div class="fish__tail-main"></div>
+                    <div class="fish__tail-fork"></div>
+                    <div class="fish__fin"></div>
+                    <div class="fish__fin fish__fin--2"></div>
+                </div>
+            </div>
+        </div>
+        <div class="ocean__bubbles"><span></span><span></span><span></span></div>
+        <div class="ocean__kraken">
+            <svg viewBox="0 0 200 220" fill="none" stroke="#4C3F7A" stroke-width="9" stroke-linecap="round">
+                <g class="kraken__body">
+                    <path class="kraken__reach" pathLength="1" stroke-width="7" d="M140 88 C172 70 178 20 150 -10 C130 -30 104 -30 100 -44">
+                        <animate attributeName="d" dur="2.6s" repeatCount="indefinite" calcMode="spline" keySplines=".45 0 .55 1; .45 0 .55 1"
+                            values="M140 88 C172 70 178 20 150 -10 C130 -30 104 -30 100 -44; M140 88 C168 64 184 24 156 -6 C136 -26 110 -34 96 -40; M140 88 C172 70 178 20 150 -10 C130 -30 104 -30 100 -44"/>
+                    </path>
+                    <path d="M66 108 C48 128 30 132 24 156 C19 176 34 188 44 176">
+                        <animate attributeName="d" dur="3.4s" repeatCount="indefinite" calcMode="spline" keySplines=".45 0 .55 1; .45 0 .55 1"
+                            values="M66 108 C48 128 30 132 24 156 C19 176 34 188 44 176; M66 108 C44 124 22 140 22 162 C22 182 40 186 46 172; M66 108 C48 128 30 132 24 156 C19 176 34 188 44 176"/>
+                    </path>
+                    <path d="M80 112 C72 140 56 160 60 186 C63 204 80 204 82 192">
+                        <animate attributeName="d" dur="3s" repeatCount="indefinite" calcMode="spline" keySplines=".45 0 .55 1; .45 0 .55 1"
+                            values="M80 112 C72 140 56 160 60 186 C63 204 80 204 82 192; M80 112 C78 142 64 164 70 190 C74 206 90 200 88 188; M80 112 C72 140 56 160 60 186 C63 204 80 204 82 192"/>
+                    </path>
+                    <path d="M94 114 C94 146 84 172 92 200 C96 212 108 208 104 198">
+                        <animate attributeName="d" dur="3.8s" repeatCount="indefinite" calcMode="spline" keySplines=".45 0 .55 1; .45 0 .55 1"
+                            values="M94 114 C94 146 84 172 92 200 C96 212 108 208 104 198; M94 114 C88 148 96 174 88 200 C84 212 72 206 78 198; M94 114 C94 146 84 172 92 200 C96 212 108 208 104 198"/>
+                    </path>
+                    <path d="M106 114 C106 146 116 172 108 200 C104 212 92 208 96 198">
+                        <animate attributeName="d" dur="3.2s" repeatCount="indefinite" calcMode="spline" keySplines=".45 0 .55 1; .45 0 .55 1"
+                            values="M106 114 C106 146 116 172 108 200 C104 212 92 208 96 198; M106 114 C112 148 104 174 112 200 C116 212 128 206 122 198; M106 114 C106 146 116 172 108 200 C104 212 92 208 96 198"/>
+                    </path>
+                    <path d="M120 112 C128 140 144 160 140 186 C137 204 120 204 118 192">
+                        <animate attributeName="d" dur="3.6s" repeatCount="indefinite" calcMode="spline" keySplines=".45 0 .55 1; .45 0 .55 1"
+                            values="M120 112 C128 140 144 160 140 186 C137 204 120 204 118 192; M120 112 C122 142 136 164 130 190 C126 206 110 200 112 188; M120 112 C128 140 144 160 140 186 C137 204 120 204 118 192"/>
+                    </path>
+                    <path d="M134 108 C152 128 170 132 176 156 C181 176 166 188 156 176">
+                        <animate attributeName="d" dur="3.1s" repeatCount="indefinite" calcMode="spline" keySplines=".45 0 .55 1; .45 0 .55 1"
+                            values="M134 108 C152 128 170 132 176 156 C181 176 166 188 156 176; M134 108 C156 124 178 140 178 162 C178 182 160 186 154 172; M134 108 C152 128 170 132 176 156 C181 176 166 188 156 176"/>
+                    </path>
+                    <path d="M58 112 C50 70 70 18 100 16 C130 18 150 70 142 112 C128 120 72 120 58 112 Z" fill="#4C3F7A" stroke="none"/>
+                    <path d="M78 40 C86 28 98 24 108 26" stroke="#6B5CA5" stroke-width="5" opacity="0.7"/>
+                    <g class="kraken__eyes" stroke="none">
+                        <ellipse cx="84" cy="88" rx="7" ry="8" fill="#FBBF24"/>
+                        <ellipse cx="116" cy="88" rx="7" ry="8" fill="#FBBF24"/>
+                        <ellipse class="kraken__pupil" cx="84" cy="88" rx="1.6" ry="6" fill="#0F172A"/>
+                        <ellipse class="kraken__pupil" cx="116" cy="88" rx="1.6" ry="6" fill="#0F172A"/>
+                    </g>
+                </g>
+            </svg>
+        </div>
     </div>
 
     <header class="site-header">
@@ -68,6 +141,7 @@
                 </div>
                 <figure class="hero-photo glow">
                     <img src="Assets/images/profile.jpg" alt="Muhammad Ibrahim Shehu" width="720" height="720" fetchpriority="high">
+                    <span class="hero-caustics" aria-hidden="true"></span>
                 </figure>
             </div>
         </section>
@@ -301,20 +375,20 @@
                             <ul class="tl-tags"><li>JavaScript</li><li>DOM API</li><li>OOP</li></ul>
                         </div>
                     </li>
-                    <li class="tl-item tl-key reveal">
-                        <div class="tl-card glow">
-                            <p class="tl-meta"><span>2022</span><span class="tl-flag">Key milestone</span></p>
-                            <h3>Backend with Django</h3>
-                            <p>Moved server-side. A full e-commerce build forced me to understand authentication, database design, REST APIs, and deployment.</p>
-                            <ul class="tl-tags"><li>Python</li><li>Django</li><li>PostgreSQL</li><li>REST API</li></ul>
-                        </div>
-                    </li>
                     <li class="tl-item reveal">
                         <div class="tl-card glow">
-                            <p class="tl-meta"><span>2023</span></p>
+                            <p class="tl-meta"><span>2022</span></p>
                             <h3>React &amp; modern frontend</h3>
                             <p>Revisited frontend with React and Tailwind CSS: component architecture, state management, and fast, accessible interfaces.</p>
                             <ul class="tl-tags"><li>React</li><li>Tailwind CSS</li><li>Next.js</li><li>TypeScript</li></ul>
+                        </div>
+                    </li>
+                    <li class="tl-item tl-key reveal">
+                        <div class="tl-card glow">
+                            <p class="tl-meta"><span>2023</span><span class="tl-flag">Key milestone</span></p>
+                            <h3>Backend with Django</h3>
+                            <p>Moved server-side. A full e-commerce build forced me to understand authentication, database design, REST APIs, and deployment.</p>
+                            <ul class="tl-tags"><li>Python</li><li>Django</li><li>PostgreSQL</li><li>REST API</li></ul>
                         </div>
                     </li>
                     <li class="tl-item reveal">
@@ -596,6 +670,131 @@
             window.addEventListener('scroll', queue, { passive: true });
             document.documentElement.addEventListener('mouseleave', () => { x = y = -9999; queue(); });
         })();
+
+        // ===== PHOTO TILT =====
+        // The hero photo leans toward the cursor; CSS eases --tilt-x/-y and adds the float.
+        (function() {
+            if (!window.matchMedia('(hover: hover) and (pointer: fine)').matches) return;
+            if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+            const hero = document.querySelector('.hero');
+            const photo = hero.querySelector('.hero-photo');
+            const clamp = v => Math.max(-10, Math.min(10, v));
+
+            hero.addEventListener('pointermove', e => {
+                const r = photo.getBoundingClientRect();
+                const dx = (e.clientX - (r.left + r.width / 2)) / window.innerWidth;
+                const dy = (e.clientY - (r.top + r.height / 2)) / window.innerHeight;
+                photo.style.setProperty('--tilt-y', clamp(dx * 20).toFixed(2) + 'deg');
+                photo.style.setProperty('--tilt-x', clamp(dy * -20).toFixed(2) + 'deg');
+            });
+            hero.addEventListener('pointerleave', () => {
+                photo.style.setProperty('--tilt-x', '0deg');
+                photo.style.setProperty('--tilt-y', '0deg');
+            });
+        })();
+
+        // ===== OCEAN =====
+        // Scroll-scrubbed dive: the fish swims a motion path across the whole page, rolls and
+        // dives, then fades to a ghostly skeleton at the bottom. GSAP comes from deferred
+        // scripts, which run before DOMContentLoaded; if they fail, only the static layer shows.
+        document.addEventListener('DOMContentLoaded', () => {
+            if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+            if (!window.gsap || !window.ScrollTrigger || !window.MotionPathPlugin) return;
+            gsap.registerPlugin(ScrollTrigger, MotionPathPlugin);
+
+            const ocean = document.getElementById('ocean');
+            const fish = ocean.querySelector('.fish');
+            const inner = ocean.querySelector('.fish__inner');
+            const skeleton = ocean.querySelector('.fish__skeleton');
+            const flesh = [...ocean.querySelectorAll('.fish__head, .fish__body')];
+            const bubbleEls = ocean.querySelectorAll('.ocean__bubbles span');
+            const kraken = ocean.querySelector('.ocean__kraken');
+            const reach = ocean.querySelector('.kraken__reach');
+            const page = { trigger: document.documentElement, start: 'top top', end: 'bottom bottom' };
+
+            // Where the fish's centre goes, as fractions of the viewport, so the path fits any screen
+            const PATH = [
+                [0.79, 0.17], [0.88, 0.12], [0.94, 0.22],
+                [0.84, 0.40], [0.70, 0.28], [0.12, 0.62],
+                [0.08, 0.42], [0.40, 0.55], [0.82, 0.32],
+                [0.92, 0.46], [0.42, 0.62], [0.18, 0.38],
+                [0.08, 0.50], [0.45, 0.68], [0.86, 0.76] // last point sits over .ocean__kraken
+            ];
+
+            // Surface light fades over the hero, the water darkens over the whole page
+            gsap.to('.ocean__rays, .ocean__surface', { opacity: 0, y: -200, ease: 'power2.in',
+                scrollTrigger: { trigger: '.hero', start: 'top top', end: 'bottom top', scrub: 1 } });
+            gsap.to('.ocean__abyss', { opacity: 1, ease: 'none', scrollTrigger: { ...page, scrub: 1 } });
+            gsap.to('.ocean__lights', { yPercent: -20, ease: 'none', scrollTrigger: { ...page, scrub: 2 } });
+
+            let tl, facing = 1;
+
+            // Head leads in both directions: flip the fish when the scroll direction changes
+            function face(self) {
+                if (self.direction === facing) return;
+                facing = self.direction;
+                gsap.to(fish, { rotationY: facing === -1 ? 180 : 0, duration: 0.4 });
+            }
+
+            function build() {
+                const vw = window.innerWidth, vh = window.innerHeight, half = fish.offsetWidth / 2;
+                const path = PATH.map(([x, y]) => ({ x: x * vw - half, y: y * vh - half }));
+                // a points path starts from the fish's current position, so park it on the first point
+                gsap.set(fish, path.shift());
+                gsap.set(kraken, { y: vh - kraken.offsetTop }); // parked just below the viewport
+                tl = gsap.timeline({ scrollTrigger: { ...page, scrub: 1.5, onUpdate: face } })
+                    .to(fish, { motionPath: { path, autoRotate: true }, duration: 9, ease: 'none', immediateRender: true }, 0)
+                    .to(fish, { rotationX: 180 }, 1)
+                    .to(fish, { rotationX: 0 }, 2.5)
+                    .to(fish, { z: -500, duration: 2 }, 2.5)
+                    .to(fish, { rotationX: 180 }, 4)
+                    .to(fish, { rotationX: 0 }, 5.5)
+                    .to(fish, { z: -50, duration: 2 }, 5)
+                    .to(fish, { rotation: 0, duration: 0.6 }, 8.4)
+                    // at the bottom the kraken rises and reaches for the fish...
+                    .to(kraken, { y: 0, duration: 1, ease: 'power2.out' }, 7.9)
+                    .to(reach, { strokeDashoffset: 0, duration: 0.5 }, 8.6)
+                    // ...and the flesh flickers away, leaving the skeleton
+                    .to(skeleton, { opacity: 0.6, duration: 0.1, repeat: 4 }, 9.1)
+                    .to(flesh, { opacity: 0, duration: 0.1, repeat: 4 }, 9.1)
+                    .to(inner, { opacity: 0.1, duration: 0.4 }, 9.6)
+                    .to(skeleton, { opacity: 0.25, duration: 0.4 }, 9.6);
+            }
+
+            const bubbles = gsap.timeline({ paused: true })
+                .set(bubbleEls, { y: 60, scale: 0, opacity: 0 })
+                .to(bubbleEls, { scale: 1.2, y: -220, opacity: 1, duration: 2, stagger: 0.2 })
+                .to(bubbleEls, { scale: 1, opacity: 0, duration: 1 }, '-=1');
+
+            function blowBubbles() {
+                if (tl.progress() > 0.88) return; // no bubbles from a skeleton
+                const r = inner.getBoundingClientRect();
+                gsap.set('.ocean__bubbles', { x: r.left + r.width / 2, y: r.top });
+                bubbles.restart();
+            }
+
+            build();
+            ocean.classList.add('is-live');
+            document.querySelectorAll('main > section').forEach(section => {
+                ScrollTrigger.create({ trigger: section, start: 'top 60%', onEnter: blowBubbles, onEnterBack: blowBubbles });
+            });
+            setTimeout(blowBubbles, 2400); // once the loader has cleared
+
+            // Rebuild the path on width changes only; mobile URL bars change the height constantly
+            let lastW = window.innerWidth, resizeTimer;
+            window.addEventListener('resize', () => {
+                if (window.innerWidth === lastW) return;
+                lastW = window.innerWidth;
+                clearTimeout(resizeTimer);
+                resizeTimer = setTimeout(() => {
+                    tl.scrollTrigger.kill();
+                    tl.kill();
+                    gsap.set([fish, inner, skeleton, ...flesh, kraken, reach], { clearProps: 'all' });
+                    facing = 1;
+                    build();
+                }, 250);
+            });
+        });
 
         // ===== MOBILE MENU =====
         const menuToggle = document.getElementById('menu-toggle');
