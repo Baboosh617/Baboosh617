@@ -3,19 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Muhammad Ibrahim Shehu — Software Engineer</title>
-    <meta name="description" content="Backend-leaning full-stack developer. I build production-shaped web apps: auth, payments, background jobs, and the parts that break in real use.">
-    <meta name="theme-color" content="#0a0a0a">
+    <title>Muhammad Ibrahim Shehu — Software Engineer &amp; AI/ML Developer</title>
+    <meta name="description" content="Software engineer and AI/ML developer. I build backends, machine learning models, and full-stack apps.">
+    <meta name="theme-color" content="#0F172A">
 
     <meta property="og:type" content="website">
-    <meta property="og:title" content="Muhammad Ibrahim Shehu — Software Engineer">
-    <meta property="og:description" content="Backend-leaning full-stack developer. Python, Django, FastAPI, PostgreSQL, and some ML on the side.">
+    <meta property="og:title" content="Muhammad Ibrahim Shehu — Software Engineer &amp; AI/ML Developer">
+    <meta property="og:description" content="Software engineer and AI/ML developer building backends, machine learning models, and full-stack apps.">
     <meta property="og:url" content="https://boosh.netlify.app/">
     <meta property="og:image" content="https://boosh.netlify.app/Assets/images/grid.png">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:site" content="@baboosh315">
 
-    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%230a0a0a'/%3E%3Ctext x='16' y='22' font-family='monospace' font-size='16' font-weight='700' fill='%2300d4ff' text-anchor='middle'%3EMI%3C/text%3E%3C/svg%3E">
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%230F172A'/%3E%3Ctext x='16' y='22' font-family='monospace' font-size='16' font-weight='700' fill='%2310B981' text-anchor='middle'%3EMI%3C/text%3E%3C/svg%3E">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -37,14 +37,17 @@
         <div class="nav-container">
             <a href="#top" class="logo" aria-label="Muhammad Ibrahim Shehu, back to top">MIS<span class="logo-cursor" aria-hidden="true">_</span></a>
             <button id="menu-toggle" aria-label="Toggle navigation" aria-expanded="false" aria-controls="nav-links">
-                <svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+                <svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square" aria-hidden="true"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
             </button>
             <nav aria-label="Main navigation">
                 <ul class="nav-links" id="nav-links">
+                    <li><a href="#about">About</a></li>
                     <li><a href="#projects">Projects</a></li>
                     <li><a href="#stack">Stack</a></li>
-                    <li><a href="#approach">Approach</a></li>
+                    <li><a href="#journey">Journey</a></li>
+                    <li><a href="#github">GitHub</a></li>
                     <li><a href="#contact">Contact</a></li>
+                    <li><a href="mailto:babasmuhammad617@gmail.com" class="nav-cta">Hire me</a></li>
                 </ul>
             </nav>
         </div>
@@ -53,15 +56,49 @@
     <main id="main">
         <!-- Hero -->
         <section class="hero" id="top" aria-labelledby="hero-heading">
-            <div class="container">
-                <p class="hero-name">Muhammad Ibrahim Shehu</p>
-                <h1 id="hero-heading">I build <span>systems</span> that work.<br>Then I make them better.</h1>
-                <p class="lead">Backend-leaning full-stack developer. I build production-shaped web apps: auth, payments, background jobs, the parts that break in real use, not just in demos.</p>
-                <div class="hero-actions">
-                    <a href="#projects" class="btn">See the work</a>
-                    <a href="#contact" class="btn btn-ghost">Get in touch</a>
+            <div class="container hero-grid">
+                <div>
+                    <p class="hero-name">Muhammad Ibrahim Shehu <span class="hero-role">// Software Engineer &amp; AI/ML Developer</span></p>
+                    <h1 id="hero-heading">I build <span>systems</span> that work.<br>Then I make them better.</h1>
+                    <p class="lead">Software engineer and AI/ML developer. I build backends, machine learning models, and full-stack apps, and turn complex ideas into clean, scalable software one iteration at a time.</p>
+                    <div class="hero-actions">
+                        <a href="#projects" class="btn">See the work</a>
+                        <a href="mailto:babasmuhammad617@gmail.com" class="btn btn-ghost">Hire me</a>
+                    </div>
                 </div>
-                <p class="system-status"><span class="status-dot" aria-hidden="true"></span> status: building → shipping → iterating</p>
+                <figure class="hero-photo glow">
+                    <img src="Assets/images/profile.jpg" alt="Muhammad Ibrahim Shehu" width="720" height="720" fetchpriority="high">
+                </figure>
+            </div>
+        </section>
+
+        <!-- About -->
+        <section class="section" id="about" aria-labelledby="about-heading">
+            <div class="container about-grid">
+                <div class="reveal">
+                    <p class="section-label">// 01 — About</p>
+                    <blockquote class="pull-quote">
+                        <p>I build things to understand them. Then I build them better.</p>
+                    </blockquote>
+                    <dl class="about-stats">
+                        <div class="about-stat glow"><dt>Years building</dt><dd>2+</dd></div>
+                        <div class="about-stat glow"><dt>Projects shipped</dt><dd>4</dd></div>
+                        <div class="about-stat glow"><dt>Grid model accuracy</dt><dd>98.7%</dd></div>
+                        <div class="about-stat glow"><dt>Goal: software that holds up</dt><dd>1</dd></div>
+                    </dl>
+                </div>
+                <div class="reveal">
+                    <h2 class="section-title" id="about-heading">Software engineer.<br>AI/ML developer.</h2>
+                    <div class="about-copy">
+                        <p>I started where most developers do: HTML, CSS, and some JavaScript that didn't quite work the way I expected. What kept me going wasn't the code, it was the feeling of building something that actually responded to the world.</p>
+                        <p>That curiosity pushed me deeper: Django and FastAPI for backend work, PostgreSQL for real data persistence, Redis and Celery for the jobs that shouldn't block a request, and eventually machine learning. I built a power grid stability predictor that hit <strong>98.7% accuracy</strong>. Not because I followed a tutorial, but because I spent time understanding why the data looked the way it did.</p>
+                        <p>Right now I'm working in the space between software engineering and AI. The most interesting work happens where infrastructure meets intelligence: a system that doesn't just run, but learns. That's where I want to be.</p>
+                    </div>
+                    <p class="mini-label">Currently using</p>
+                    <ul class="chip-row">
+                        <li>Python</li><li>Django</li><li>FastAPI</li><li>PostgreSQL</li><li>Redis</li><li>Docker</li><li>scikit-learn</li><li>Git</li>
+                    </ul>
+                </div>
             </div>
         </section>
 
@@ -69,23 +106,23 @@
         <section class="section" id="projects" aria-labelledby="projects-heading">
             <div class="container">
                 <div class="section-head reveal">
-                    <p class="section-label">// 01 — Projects</p>
+                    <p class="section-label">// 02 — Projects</p>
                     <h2 class="section-title" id="projects-heading">Case files</h2>
                     <p class="section-desc">Things I've built end to end. Each one links to the code.</p>
                 </div>
 
                 <div class="projects-grid">
-                    <article class="project-card reveal">
+                    <article class="project-card glow reveal">
                         <div class="project-img-wrapper">
                             <img src="Assets/images/grid.png" alt="Grid Stability Predictor Streamlit app" class="project-img" width="1366" height="768" loading="lazy">
                         </div>
                         <div class="project-body">
                             <span class="project-tag tag-ml">Machine learning</span>
                             <h3 class="project-name">Grid Stability Predictor</h3>
-                            <p class="project-what">A classification model that predicts power grid stability from electrical parameters, served as a Streamlit app. Grid instability causes cascading blackouts; catching it early is cheaper than recovering from it. 98.7% accuracy on held-out test data.</p>
+                            <p class="project-what">A classification model that predicts power grid stability from electrical parameters, served as a Streamlit app. 98.7% accuracy on held-out test data.</p>
                             <p class="project-learned">Data cleaning took longer than modelling. One pipeline bug took 2 hours. It was a missing comma.</p>
                             <ul class="project-stack" aria-label="Tech stack">
-                                <li>Python</li><li>scikit-learn</li><li>pandas</li><li>numpy</li><li>Streamlit</li>
+                                <li>Python</li><li>scikit-learn</li><li>pandas</li><li>Streamlit</li>
                             </ul>
                             <div class="project-link-row">
                                 <a href="https://gridstabilizer.streamlit.app/" class="project-link demo" target="_blank" rel="noopener">Live demo <span aria-hidden="true">↗</span></a>
@@ -94,7 +131,7 @@
                         </div>
                     </article>
 
-                    <article class="project-card reveal">
+                    <article class="project-card glow reveal">
                         <div class="project-img-wrapper">
                             <img src="Assets/images/podzilla.jpg" alt="Podzilla website hero section" class="project-img" width="1280" height="720" loading="lazy">
                         </div>
@@ -112,7 +149,7 @@
                         </div>
                     </article>
 
-                    <article class="project-card reveal">
+                    <article class="project-card glow reveal">
                         <div class="project-img-wrapper">
                             <img src="Assets/images/Pythagora.png" alt="Pythagora geometry calculator with the shape picker open and a circle preview" class="project-img" width="1366" height="768" loading="lazy">
                         </div>
@@ -129,16 +166,16 @@
                         </div>
                     </article>
 
-                    <article class="project-card reveal">
+                    <article class="project-card glow reveal">
                         <div class="project-img-wrapper">
                             <img src="Assets/images/Gitbro.png" alt="Gitbro showing the torvalds profile and top repositories by stars" class="project-img" width="1366" height="768" loading="lazy">
                         </div>
                         <div class="project-body">
                             <span class="project-tag tag-kotlin">Kotlin</span>
                             <h3 class="project-name">Gitbro</h3>
-                            <p class="project-what">A desktop GitHub profile viewer: search any user to see their profile and top repos by stars. Built on the GitHub REST API, with an Android port in Jetpack Compose.</p>
+                            <p class="project-what">A desktop GitHub profile viewer: search any user to see their profile and top repos by stars. Has an Android port in Jetpack Compose.</p>
                             <ul class="project-stack" aria-label="Tech stack">
-                                <li>Kotlin</li><li>Swing</li><li>Jetpack Compose</li><li>GitHub REST API</li>
+                                <li>Kotlin</li><li>Swing</li><li>Compose</li><li>REST API</li>
                             </ul>
                             <div class="project-link-row">
                                 <a href="https://github.com/Baboosh617/Gitbro" class="project-link gh" target="_blank" rel="noopener">Source <span aria-hidden="true">↗</span></a>
@@ -150,34 +187,203 @@
         </section>
 
         <!-- Stack -->
-        <section class="section" id="stack" aria-labelledby="stack-heading">
+        <section class="section section-alt" id="stack" aria-labelledby="stack-heading">
             <div class="container">
                 <div class="section-head reveal">
-                    <p class="section-label">// 02 — Stack</p>
+                    <p class="section-label">// 03 — Stack</p>
                     <h2 class="section-title" id="stack-heading">What I work with</h2>
-                    <p class="section-desc">No made-up percentages. The first group is my day-to-day, and the others are tools I've shipped something with.</p>
+                    <p class="section-desc">No made-up percentages. Each dot is an honest self-assessment; hover a skill to see the label.</p>
                 </div>
+
+                <ul class="level-legend reveal" aria-label="Skill level key">
+                    <li data-level="confident">Confident</li>
+                    <li data-level="proficient">Proficient</li>
+                    <li data-level="growing">Growing</li>
+                    <li data-level="learning">Learning</li>
+                </ul>
+
                 <div class="stack-grid">
-                    <div class="stack-group stack-primary reveal">
+                    <div class="stack-group stack-primary glow reveal">
                         <h3>Backend</h3>
-                        <ul><li>Python</li><li>Django</li><li>FastAPI</li><li>PostgreSQL</li><li>Redis</li><li>Celery</li><li>Docker</li></ul>
+                        <ul>
+                            <li data-level="proficient">Python<span class="sr-only">, proficient</span></li>
+                            <li data-level="confident">Django<span class="sr-only">, confident</span></li>
+                            <li data-level="proficient">Django REST<span class="sr-only">, proficient</span></li>
+                            <li data-level="growing">FastAPI<span class="sr-only">, growing</span></li>
+                            <li data-level="growing">Redis<span class="sr-only">, growing</span></li>
+                            <li data-level="growing">Celery<span class="sr-only">, growing</span></li>
+                        </ul>
                         <p class="stack-note">Where I spend most of my time.</p>
                     </div>
-                    <div class="stack-group reveal">
+                    <div class="stack-group glow reveal">
+                        <h3>Databases</h3>
+                        <ul>
+                            <li data-level="proficient">PostgreSQL<span class="sr-only">, proficient</span></li>
+                            <li data-level="proficient">SQL<span class="sr-only">, proficient</span></li>
+                            <li data-level="confident">SQLite<span class="sr-only">, confident</span></li>
+                            <li data-level="growing">MongoDB<span class="sr-only">, growing</span></li>
+                        </ul>
+                        <p class="stack-note">PostgreSQL unless there's a reason not to.</p>
+                    </div>
+                    <div class="stack-group glow reveal">
                         <h3>Frontend</h3>
-                        <ul><li>JavaScript</li><li>HTML</li><li>CSS</li><li>jQuery</li></ul>
+                        <ul>
+                            <li data-level="proficient">JavaScript<span class="sr-only">, proficient</span></li>
+                            <li data-level="confident">HTML &amp; CSS<span class="sr-only">, confident</span></li>
+                            <li data-level="growing">TypeScript<span class="sr-only">, growing</span></li>
+                            <li data-level="growing">React<span class="sr-only">, growing</span></li>
+                            <li data-level="proficient">jQuery<span class="sr-only">, proficient</span></li>
+                            <li data-level="proficient">Bootstrap<span class="sr-only">, proficient</span></li>
+                        </ul>
                         <p class="stack-note">I debug more than I write.</p>
                     </div>
-                    <div class="stack-group reveal">
+                    <div class="stack-group glow reveal">
                         <h3>Data &amp; ML</h3>
-                        <ul><li>scikit-learn</li><li>pandas</li><li>numpy</li><li>matplotlib</li><li>Streamlit</li></ul>
+                        <ul>
+                            <li data-level="proficient">scikit-learn<span class="sr-only">, proficient</span></li>
+                            <li data-level="proficient">pandas<span class="sr-only">, proficient</span></li>
+                            <li data-level="proficient">numpy<span class="sr-only">, proficient</span></li>
+                            <li data-level="proficient">matplotlib<span class="sr-only">, proficient</span></li>
+                            <li data-level="proficient">Streamlit<span class="sr-only">, proficient</span></li>
+                            <li data-level="learning">TensorFlow<span class="sr-only">, learning</span></li>
+                            <li data-level="learning">PyTorch<span class="sr-only">, learning</span></li>
+                        </ul>
                         <p class="stack-note">Pandas is my flatmate.</p>
                     </div>
-                    <div class="stack-group reveal">
+                    <div class="stack-group glow reveal">
                         <h3>Desktop, mobile &amp; hardware</h3>
-                        <ul><li>PyQt5</li><li>Kotlin</li><li>Swing</li><li>Jetpack Compose</li><li>Arduino</li></ul>
+                        <ul>
+                            <li data-level="proficient">PyQt5<span class="sr-only">, proficient</span></li>
+                            <li data-level="learning">Kotlin<span class="sr-only">, learning</span></li>
+                            <li data-level="growing">Swing<span class="sr-only">, growing</span></li>
+                            <li data-level="learning">Jetpack Compose<span class="sr-only">, learning</span></li>
+                            <li data-level="growing">Arduino<span class="sr-only">, growing</span></li>
+                        </ul>
                         <p class="stack-note">I make LEDs blink.</p>
                     </div>
+                    <div class="stack-group glow reveal">
+                        <h3>Tools &amp; ops</h3>
+                        <ul>
+                            <li data-level="confident">Git &amp; GitHub<span class="sr-only">, confident</span></li>
+                            <li data-level="proficient">Linux<span class="sr-only">, proficient</span></li>
+                            <li data-level="growing">Docker<span class="sr-only">, growing</span></li>
+                            <li data-level="growing">GitHub Actions<span class="sr-only">, growing</span></li>
+                            <li data-level="learning">Kubernetes<span class="sr-only">, learning</span></li>
+                        </ul>
+                        <p class="stack-note">Containers and CI. Orchestration is next.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Journey -->
+        <section class="section" id="journey" aria-labelledby="journey-heading">
+            <div class="container">
+                <div class="section-head reveal">
+                    <p class="section-label">// 04 — Journey</p>
+                    <h2 class="section-title" id="journey-heading">How I got here</h2>
+                    <p class="section-desc">The skills built, the projects shipped, and where I'm headed.</p>
+                </div>
+                <ol class="timeline">
+                    <li class="tl-item reveal">
+                        <div class="tl-card glow">
+                            <p class="tl-meta"><span>2021</span></p>
+                            <h3>Frontend foundations</h3>
+                            <p>Started with the basics: HTML structure, CSS layouts, and how browsers render pages. Built my first static site from scratch.</p>
+                            <ul class="tl-tags"><li>HTML</li><li>CSS</li><li>Responsive design</li></ul>
+                        </div>
+                    </li>
+                    <li class="tl-item reveal">
+                        <div class="tl-card glow">
+                            <p class="tl-meta"><span>2021 – 2022</span></p>
+                            <h3>JavaScript &amp; the DOM</h3>
+                            <p>Learned to make pages interactive. Fought with event loops, closures, and async/await until they made sense.</p>
+                            <ul class="tl-tags"><li>JavaScript</li><li>DOM API</li><li>OOP</li></ul>
+                        </div>
+                    </li>
+                    <li class="tl-item tl-key reveal">
+                        <div class="tl-card glow">
+                            <p class="tl-meta"><span>2022</span><span class="tl-flag">Key milestone</span></p>
+                            <h3>Backend with Django</h3>
+                            <p>Moved server-side. A full e-commerce build forced me to understand authentication, database design, REST APIs, and deployment.</p>
+                            <ul class="tl-tags"><li>Python</li><li>Django</li><li>PostgreSQL</li><li>REST API</li></ul>
+                        </div>
+                    </li>
+                    <li class="tl-item reveal">
+                        <div class="tl-card glow">
+                            <p class="tl-meta"><span>2023</span></p>
+                            <h3>React &amp; modern frontend</h3>
+                            <p>Revisited frontend with React and Tailwind CSS: component architecture, state management, and fast, accessible interfaces.</p>
+                            <ul class="tl-tags"><li>React</li><li>Tailwind CSS</li><li>Next.js</li><li>TypeScript</li></ul>
+                        </div>
+                    </li>
+                    <li class="tl-item reveal">
+                        <div class="tl-card glow">
+                            <p class="tl-meta"><span>2023 – 2024</span></p>
+                            <h3>DevOps &amp; systems thinking</h3>
+                            <p>Containerised applications with Docker and started learning how software runs in production: CI/CD pipelines, Linux administration, environment management.</p>
+                            <ul class="tl-tags"><li>Docker</li><li>GitHub Actions</li><li>Linux</li><li>Git</li></ul>
+                        </div>
+                    </li>
+                    <li class="tl-item tl-key reveal">
+                        <div class="tl-card glow">
+                            <p class="tl-meta"><span>2024</span><span class="tl-flag">Key milestone</span></p>
+                            <h3>Machine learning</h3>
+                            <p>Learned ML fundamentals: linear models, decision trees, ensembles. Built a power grid stability predictor that reached 98.7% test accuracy.</p>
+                            <ul class="tl-tags"><li>scikit-learn</li><li>pandas</li><li>numpy</li><li>Data cleaning</li></ul>
+                        </div>
+                    </li>
+                    <li class="tl-item tl-key reveal">
+                        <div class="tl-card glow">
+                            <p class="tl-meta"><span>2024 – now</span><span class="tl-flag">Active</span></p>
+                            <h3>Deep learning &amp; AI engineering</h3>
+                            <p>Exploring neural networks, transformers, and AI application development with TensorFlow and PyTorch, focused on bridging engineering and intelligence.</p>
+                            <ul class="tl-tags"><li>TensorFlow</li><li>PyTorch</li><li>Deep learning</li><li>AI systems</li></ul>
+                        </div>
+                    </li>
+                </ol>
+            </div>
+        </section>
+
+        <!-- Focus -->
+        <section class="section section-alt" id="focus" aria-labelledby="focus-heading">
+            <div class="container">
+                <div class="section-head reveal">
+                    <p class="section-label">// 05 — Focus</p>
+                    <h2 class="section-title" id="focus-heading">What I'm working on</h2>
+                    <p class="section-desc">Where my attention is right now.</p>
+                </div>
+                <div class="focus-grid">
+                    <article class="focus-card glow reveal">
+                        <div class="focus-head"><h3>AI engineering</h3><span class="badge badge-active">Active</span></div>
+                        <p>Moving beyond classical ML into neural networks, transformers, and AI-powered applications.</p>
+                        <p class="focus-detail">TensorFlow · PyTorch · LLM integration</p>
+                    </article>
+                    <article class="focus-card glow reveal">
+                        <div class="focus-head"><h3>Machine learning</h3><span class="badge badge-deepening">Deepening</span></div>
+                        <p>Model evaluation, feature engineering, and deploying ML systems that hold up under real-world data.</p>
+                        <p class="focus-detail">scikit-learn · pandas · Model deployment</p>
+                    </article>
+                    <article class="focus-card glow reveal">
+                        <div class="focus-head"><h3>Backend architecture</h3><span class="badge badge-deepening">Deepening</span></div>
+                        <p>Solidifying backend fundamentals: clean code, authentication, optimised queries, background jobs, and RESTful design.</p>
+                        <p class="focus-detail">Django REST · FastAPI · PostgreSQL · Celery</p>
+                    </article>
+                    <article class="focus-card glow reveal">
+                        <div class="focus-head"><h3>Full-stack development</h3><span class="badge badge-active">Active</span></div>
+                        <p>Pairing the backend with modern React and Next.js to build complete applications end to end.</p>
+                        <p class="focus-detail">React · Next.js · TypeScript · Tailwind</p>
+                    </article>
+                    <article class="focus-card glow reveal">
+                        <div class="focus-head"><h3>System design</h3><span class="badge badge-exploring">Exploring</span></div>
+                        <p>How large systems are put together: distributed systems, database trade-offs, caching strategies, and API design.</p>
+                        <p class="focus-detail">Distributed systems · API design · Caching</p>
+                    </article>
+                    <article class="focus-card glow reveal">
+                        <div class="focus-head"><h3>Docker &amp; Kubernetes</h3><span class="badge badge-exploring">Exploring</span></div>
+                        <p>Containerising applications and learning orchestration, so the code runs the same everywhere it needs to.</p>
+                        <p class="focus-detail">Docker · Kubernetes · CI/CD</p>
+                    </article>
                 </div>
             </div>
         </section>
@@ -186,21 +392,21 @@
         <section class="section" id="approach" aria-labelledby="approach-heading">
             <div class="container">
                 <div class="section-head reveal">
-                    <p class="section-label">// 03 — Approach</p>
+                    <p class="section-label">// 06 — Approach</p>
                     <h2 class="section-title" id="approach-heading">How I approach problems</h2>
                 </div>
                 <ol class="think-grid">
-                    <li class="think-card reveal">
+                    <li class="think-card glow reveal">
                         <span class="think-num">01</span>
                         <h3>Understand the system</h3>
                         <p>Map the problem first. No code until the logic is clear.</p>
                     </li>
-                    <li class="think-card reveal">
+                    <li class="think-card glow reveal">
                         <span class="think-num">02</span>
                         <h3>Break it into parts</h3>
                         <p>Isolate each piece, test it, then put them back together.</p>
                     </li>
-                    <li class="think-card reveal">
+                    <li class="think-card glow reveal">
                         <span class="think-num">03</span>
                         <h3>Iterate until stable</h3>
                         <p>Ship early, refine on real feedback, skip premature perfection.</p>
@@ -209,24 +415,68 @@
             </div>
         </section>
 
+        <!-- GitHub -->
+        <section class="section section-alt" id="github" aria-labelledby="github-heading">
+            <div class="container">
+                <div class="section-head reveal">
+                    <p class="section-label">// 07 — GitHub</p>
+                    <h2 class="section-title" id="github-heading">Code activity</h2>
+                    <p class="section-desc">Live from the GitHub API. No screenshots.</p>
+                </div>
+
+                <p class="gh-nojs">Live stats need JavaScript. <a href="https://github.com/Baboosh617" target="_blank" rel="noopener">See my profile on GitHub ↗</a></p>
+
+                <div class="gh-live" id="gh" aria-busy="true">
+                    <div class="gh-stats reveal">
+                        <div class="gh-stat glow"><span class="gh-stat-value" data-stat="repos"><span class="skel"></span></span><span class="gh-stat-label">Public repos</span></div>
+                        <div class="gh-stat glow"><span class="gh-stat-value" data-stat="followers"><span class="skel"></span></span><span class="gh-stat-label">Followers</span></div>
+                        <div class="gh-stat glow"><span class="gh-stat-value" data-stat="stars"><span class="skel"></span></span><span class="gh-stat-label">Stars</span></div>
+                        <div class="gh-stat glow"><span class="gh-stat-value" data-stat="forks"><span class="skel"></span></span><span class="gh-stat-label">Forks</span></div>
+                    </div>
+
+                    <div class="gh-grid">
+                        <div class="gh-card glow reveal">
+                            <h3>Languages</h3>
+                            <p class="gh-sub">Share of my repos, by main language</p>
+                            <ul class="lang-list" id="gh-langs"></ul>
+                            <div class="gh-chart">
+                                <p class="gh-sub">Contribution activity</p>
+                                <img src="https://ghchart.rshah.org/10B981/Baboosh617" alt="GitHub contribution chart for Baboosh617" loading="lazy" width="663" height="104" onerror="this.parentElement.remove()">
+                            </div>
+                        </div>
+                        <div class="reveal">
+                            <h3 class="gh-h">Repositories</h3>
+                            <div class="repo-grid" id="gh-repos"></div>
+                            <a class="gh-all" href="https://github.com/Baboosh617" target="_blank" rel="noopener">See all on GitHub <span aria-hidden="true">↗</span></a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="gh-error" id="gh-error" hidden>
+                    <p>Couldn't load GitHub data right now.</p>
+                    <a href="https://github.com/Baboosh617" target="_blank" rel="noopener">View the profile directly ↗</a>
+                </div>
+            </div>
+        </section>
+
         <!-- Contact -->
         <section class="section contact-section" id="contact" aria-labelledby="contact-heading">
             <div class="container">
                 <div class="contact-inner reveal">
-                    <p class="section-label">// 04 — Contact</p>
+                    <p class="section-label">// 08 — Contact</p>
                     <h2 class="section-title" id="contact-heading">Let's talk</h2>
-                    <p class="section-desc">Open to backend and full-stack roles, freelance builds, and interesting problems. Email is fastest.</p>
+                    <p class="section-desc">Open to software engineering roles, freelance projects, and interesting collaborations. Email is fastest.</p>
 
                     <div class="contact-links">
                         <a href="mailto:babasmuhammad617@gmail.com" class="contact-link contact-primary">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square" stroke-linejoin="miter" aria-hidden="true"><path d="M2 4h20v16H2z"/><polyline points="22,6 12,13 2,6"/></svg>
                             babasmuhammad617@gmail.com
                         </a>
-                        <a href="https://github.com/Baboosh617" class="contact-link" target="_blank" rel="noopener">
+                        <a href="https://github.com/Baboosh617" class="contact-link glow" target="_blank" rel="noopener">
                             <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
                             GitHub
                         </a>
-                        <a href="https://twitter.com/baboosh315" class="contact-link" target="_blank" rel="noopener">
+                        <a href="https://twitter.com/baboosh315" class="contact-link glow" target="_blank" rel="noopener">
                             <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
                             @baboosh315
                         </a>
@@ -237,7 +487,7 @@
                     </button>
 
                     <div class="terminal-wrap" id="termWrap" hidden>
-                        <div class="terminal">
+                        <div class="terminal glow">
                             <div class="terminal-bar" aria-hidden="true">
                                 <span class="terminal-dot r"></span>
                                 <span class="terminal-dot y"></span>
@@ -264,8 +514,8 @@
 
     <script>
         // ===== CONSOLE EASTER EGG =====
-        console.log('%c👋 Hey. Curious one.', 'color: #00d4ff; font-size: 18px; font-weight: bold;');
-        console.log('%cTry the terminal in the contact section, or the Konami code.', 'color: #888; font-size: 14px;');
+        console.log('%c👋 Hey. Curious one.', 'color: #10B981; font-size: 18px; font-weight: bold;');
+        console.log('%cTry the terminal in the contact section, or the Konami code.', 'color: #94A3B8; font-size: 14px;');
 
         document.getElementById('year').textContent = new Date().getFullYear();
 
@@ -322,6 +572,31 @@
             reveals.forEach(el => el.classList.add('visible'));
         }
 
+        // ===== CURSOR EDGE GLOW =====
+        // Each .glow box gets --mx/--my relative to itself; CSS draws a radial light
+        // on its 1px border, so the edge nearest the cursor lights up.
+        (function() {
+            if (!window.matchMedia('(hover: hover) and (pointer: fine)').matches) return;
+            const boxes = document.getElementsByClassName('glow'); // live: picks up GitHub repo cards
+            let x = -9999, y = -9999, frame = 0;
+
+            function update() {
+                frame = 0;
+                const vh = window.innerHeight;
+                for (const el of boxes) {
+                    const r = el.getBoundingClientRect();
+                    if (r.bottom < -200 || r.top > vh + 200) continue;
+                    el.style.setProperty('--mx', (x - r.left) + 'px');
+                    el.style.setProperty('--my', (y - r.top) + 'px');
+                }
+            }
+            function queue() { if (!frame) frame = requestAnimationFrame(update); }
+
+            document.addEventListener('pointermove', e => { x = e.clientX; y = e.clientY; queue(); }, { passive: true });
+            window.addEventListener('scroll', queue, { passive: true });
+            document.documentElement.addEventListener('mouseleave', () => { x = y = -9999; queue(); });
+        })();
+
         // ===== MOBILE MENU =====
         const menuToggle = document.getElementById('menu-toggle');
         const navLinks = document.getElementById('nav-links');
@@ -331,6 +606,132 @@
         }
         menuToggle.addEventListener('click', () => setMenu(menuToggle.getAttribute('aria-expanded') !== 'true'));
         navLinks.querySelectorAll('a').forEach(link => link.addEventListener('click', () => setMenu(false)));
+
+        // ===== GITHUB STATS =====
+        // Straight from the public GitHub API (60 requests/hour per visitor IP),
+        // cached in localStorage for an hour so reloads don't burn the limit.
+        (function() {
+            const USER = 'Baboosh617';
+            const CACHE_KEY = 'gh-stats-v1';
+            const TTL = 60 * 60 * 1000;
+            // Not shown in the repo list: client work, and this profile's own README repo
+            const HIDDEN = ['vulor', 'baboosh617'];
+            // Removed from the top-6 grid without backfilling, so its slot stays empty
+            const SKIPPED = ['friendly-fishstick'];
+            const LANG_COLORS = {
+                Python: '#3B82F6', JavaScript: '#FBBF24', TypeScript: '#818CF8', HTML: '#F97316',
+                CSS: '#38BDF8', Kotlin: '#A78BFA', Shell: '#34D399', Dockerfile: '#22D3EE', 'Jupyter Notebook': '#FB7185'
+            };
+            const root = document.getElementById('gh');
+            const langList = document.getElementById('gh-langs');
+            const repoGrid = document.getElementById('gh-repos');
+
+            // Skeletons while loading
+            [70, 55, 40, 30, 20].forEach(w => {
+                const li = document.createElement('li');
+                li.innerHTML = `<span class="skel" style="width:35%"></span><span class="skel" style="width:${w}%"></span>`;
+                langList.appendChild(li);
+            });
+            for (let i = 0; i < 6; i++) {
+                const d = document.createElement('div');
+                d.className = 'repo-card';
+                d.innerHTML = '<span class="skel" style="width:60%"></span><span class="skel" style="width:90%"></span><span class="skel" style="width:40%"></span>';
+                repoGrid.appendChild(d);
+            }
+
+            function readCache() {
+                try {
+                    const c = JSON.parse(localStorage.getItem(CACHE_KEY));
+                    if (c && Date.now() - c.t < TTL) return c.d;
+                } catch (e) {}
+                return null;
+            }
+
+            async function load() {
+                const hit = readCache();
+                if (hit) return hit;
+                const [uRes, rRes] = await Promise.all([
+                    fetch(`https://api.github.com/users/${USER}`),
+                    fetch(`https://api.github.com/users/${USER}/repos?per_page=100&type=owner&sort=pushed`)
+                ]);
+                if (!uRes.ok || !rRes.ok) throw new Error(`GitHub API ${uRes.status}/${rRes.status}`);
+                const user = await uRes.json();
+                const repos = (await rRes.json()).filter(r => !r.fork && !HIDDEN.includes(r.name.toLowerCase()));
+
+                const counts = {};
+                repos.forEach(r => { if (r.language) counts[r.language] = (counts[r.language] || 0) + 1; });
+                const withLang = repos.filter(r => r.language).length || 1;
+
+                const data = {
+                    repos: user.public_repos,
+                    followers: user.followers,
+                    stars: repos.reduce((n, r) => n + r.stargazers_count, 0),
+                    forks: repos.reduce((n, r) => n + r.forks_count, 0),
+                    languages: Object.entries(counts)
+                        .sort((a, b) => b[1] - a[1]).slice(0, 6)
+                        .map(([name, n]) => ({ name, pct: Math.round(n / withLang * 100) })),
+                    top: repos
+                        .slice() // API order is most recently pushed, so ties on stars stay newest-first
+                        .sort((a, b) => b.stargazers_count - a.stargazers_count)
+                        .slice(0, 6)
+                        .map(r => ({ name: r.name, desc: r.description, url: r.html_url, lang: r.language, stars: r.stargazers_count, forks: r.forks_count }))
+                };
+                try { localStorage.setItem(CACHE_KEY, JSON.stringify({ t: Date.now(), d: data })); } catch (e) {}
+                return data;
+            }
+
+            function el(tag, cls, text) {
+                const n = document.createElement(tag);
+                if (cls) n.className = cls;
+                if (text != null) n.textContent = text;
+                return n;
+            }
+
+            function render(d) {
+                root.querySelectorAll('[data-stat]').forEach(s => { s.textContent = d[s.dataset.stat]; });
+
+                langList.replaceChildren(...d.languages.map(l => {
+                    const li = el('li');
+                    const head = el('div', 'lang-head');
+                    const name = el('span', 'lang-name', l.name);
+                    name.style.setProperty('--c', LANG_COLORS[l.name] || '#94A3B8');
+                    head.append(name, el('span', 'lang-pct', l.pct + '%'));
+                    const bar = el('div', 'lang-bar');
+                    const fill = el('span');
+                    fill.style.width = l.pct + '%';
+                    fill.style.background = LANG_COLORS[l.name] || '#94A3B8';
+                    bar.appendChild(fill);
+                    li.append(head, bar);
+                    return li;
+                }));
+
+                repoGrid.replaceChildren(...d.top.filter(r => !SKIPPED.includes(r.name.toLowerCase())).map(r => {
+                    const a = el('a', 'repo-card glow');
+                    a.href = r.url;
+                    a.target = '_blank';
+                    a.rel = 'noopener';
+                    a.appendChild(el('span', 'repo-name', r.name));
+                    if (r.desc) a.appendChild(el('span', 'repo-desc', r.desc));
+                    const meta = el('span', 'repo-meta');
+                    if (r.lang) {
+                        const lang = el('span', 'lang-name', r.lang);
+                        lang.style.setProperty('--c', LANG_COLORS[r.lang] || '#94A3B8');
+                        meta.appendChild(lang);
+                    }
+                    if (r.stars) meta.appendChild(el('span', null, '★ ' + r.stars));
+                    if (r.forks) meta.appendChild(el('span', null, '⑂ ' + r.forks));
+                    a.appendChild(meta);
+                    return a;
+                }));
+                root.setAttribute('aria-busy', 'false');
+            }
+
+            load().then(render).catch(err => {
+                console.warn('GitHub stats:', err);
+                root.hidden = true;
+                document.getElementById('gh-error').hidden = false;
+            });
+        })();
 
         // ===== TERMINAL =====
         (function() {
@@ -361,9 +762,9 @@
                     '  github      open GitHub\n' +
                     '  twitter     open Twitter / X\n' +
                     '  clear       clear the terminal'],
-                whoami: () => ['out', 'Muhammad Ibrahim Shehu\nBackend-leaning full-stack developer\nPython · Django · FastAPI · PostgreSQL'],
+                whoami: () => ['out', 'Muhammad Ibrahim Shehu\nSoftware Engineer & AI/ML Developer\nOpen to new roles and freelance work'],
                 projects: () => ['out', projects.map(p => `  ${p[0].padEnd(10)} ${p[1]}`).join('\n') + '\n\nType "open <name>" to view one.'],
-                stack: () => ['out', 'Backend:   Python, Django, FastAPI, PostgreSQL, Redis, Celery, Docker\nFrontend:  JavaScript, HTML, CSS, jQuery\nData/ML:   scikit-learn, pandas, numpy\nOther:     PyQt5, Kotlin, Jetpack Compose, Arduino'],
+                stack: () => ['out', 'Backend:   Python, Django, FastAPI, Redis, Celery\nData:      PostgreSQL, SQLite, MongoDB\nFrontend:  JavaScript, TypeScript, React, jQuery\nML:        scikit-learn, pandas, numpy\nOther:     PyQt5, Kotlin, Docker, Arduino'],
                 contact: () => ['ok', 'babasmuhammad617@gmail.com'],
                 github: () => { window.open('https://github.com/Baboosh617', '_blank', 'noopener'); return ['ok', 'Opening GitHub…']; },
                 twitter: () => { window.open('https://twitter.com/baboosh315', '_blank', 'noopener'); return ['ok', 'Opening Twitter / X…']; },
@@ -433,7 +834,7 @@
                 if (idx === seq.length) {
                     idx = 0;
                     document.body.classList.toggle('konami');
-                    console.log('%c🎮 You found the Konami code. Now you\'re officially one of us.', 'color: #34d399; font-size: 14px; font-weight: bold;');
+                    console.log('%c🎮 You found the Konami code. Now you\'re officially one of us.', 'color: #38BDF8; font-size: 14px; font-weight: bold;');
                 }
             });
         })();
