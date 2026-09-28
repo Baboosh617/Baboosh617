@@ -3,590 +3,398 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Muhammad Ibrahim — Building systems from frontend to AI/ML.">
-    <title>MIS | System Interface</title>
+    <title>Muhammad Ibrahim Shehu — Software Engineer</title>
+    <meta name="description" content="Backend-leaning full-stack developer. I build production-shaped web apps: auth, payments, background jobs, and the parts that break in real use.">
+    <meta name="theme-color" content="#0a0a0a">
 
-    <!-- Fonts -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Muhammad Ibrahim Shehu — Software Engineer">
+    <meta property="og:description" content="Backend-leaning full-stack developer. Python, Django, FastAPI, PostgreSQL, and some ML on the side.">
+    <meta property="og:url" content="https://boosh.netlify.app/">
+    <meta property="og:image" content="https://boosh.netlify.app/Assets/images/grid.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@baboosh315">
+
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%230a0a0a'/%3E%3Ctext x='16' y='22' font-family='monospace' font-size='16' font-weight='700' fill='%2300d4ff' text-anchor='middle'%3EMI%3C/text%3E%3C/svg%3E">
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
 
-    <!-- Boxicons -->
-    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-
-    <!-- Stylesheet -->
     <link rel="stylesheet" href="style.css">
+    <script>document.documentElement.classList.add('js');</script>
 </head>
 <body>
-    <a href="#main-content-anchor" class="skip-link">Skip to main content</a>
+    <a href="#main" class="skip-link">Skip to main content</a>
 
-    <!-- Loading Screen (V2) -->
-    <div id="loader" role="status" aria-live="polite">
-        <div class="loader-percent" id="loader-percent">0</div>
-        <div class="progress-track">
-            <div class="progress-fill" id="progress-fill"></div>
+    <header class="site-header">
+        <div class="nav-container">
+            <a href="#top" class="logo" aria-label="Muhammad Ibrahim Shehu, back to top">MIS<span class="logo-cursor" aria-hidden="true">_</span></a>
+            <button id="menu-toggle" aria-label="Toggle navigation" aria-expanded="false" aria-controls="nav-links">
+                <svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+            </button>
+            <nav aria-label="Main navigation">
+                <ul class="nav-links" id="nav-links">
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#stack">Stack</a></li>
+                    <li><a href="#approach">Approach</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
         </div>
-    </div>
+    </header>
 
-    <!-- Main Interface -->
-    <div id="main-content">
-        <!-- Header (V2) -->
-        <header class="site-header">
-            <div class="nav-container">
-                <a href="#" class="logo">MIS</a>
-                <button id="menu-toggle" aria-label="Toggle navigation" aria-expanded="false">
-                    <i class='bx bx-menu'></i>
-                </button>
-                <nav aria-label="Main navigation">
-                    <ul class="nav-links" id="nav-links">
-                        <li><a href="#projects">Projects</a></li>
-                        <li><a href="#skills">Diagnostics</a></li>
-                        <li><a href="#thinking">Thinking</a></li>
-                        <li><a href="#contact">Contact</a></li>
-                    </ul>
-                </nav>
+    <main id="main">
+        <!-- Hero -->
+        <section class="hero" id="top" aria-labelledby="hero-heading">
+            <div class="container">
+                <p class="hero-name">Muhammad Ibrahim Shehu</p>
+                <h1 id="hero-heading">I build <span>systems</span> that work.<br>Then I make them better.</h1>
+                <p class="lead">Backend-leaning full-stack developer. I build production-shaped web apps: auth, payments, background jobs, the parts that break in real use, not just in demos.</p>
+                <div class="hero-actions">
+                    <a href="#projects" class="btn">See the work</a>
+                    <a href="#contact" class="btn btn-ghost">Get in touch</a>
+                </div>
+                <p class="system-status"><span class="status-dot" aria-hidden="true"></span> status: building → shipping → iterating</p>
             </div>
-        </header>
-        <!-- Status bar (V2) -->
-        <div class="status-bar">
-            <div class="status-dot"></div>
-            <span class="status-text" id="status-text">System running normally</span>
-        </div>
+        </section>
 
-        <main id="main-content-anchor">
-            <!-- Hero (V2) -->
-            <section class="hero" aria-labelledby="hero-heading">
-                <div class="container hero-content">
-                    <h1 id="hero-heading">I design <span>systems</span> that work.<br>Then I make them better.</h1>
-                    <p class="lead">Software Engineer evolving from frontend into AI/ML. Currently focused on machine learning and real‑world applications.</p>
-                    <div class="system-status">
-                        <span class="status-dot"></span> STATUS: Building → Learning → Iterating
-                    </div>
-                    <a href="#projects" class="btn">View Case Files</a>
+        <!-- Projects -->
+        <section class="section" id="projects" aria-labelledby="projects-heading">
+            <div class="container">
+                <div class="section-head reveal">
+                    <p class="section-label">// 01 — Projects</p>
+                    <h2 class="section-title" id="projects-heading">Case files</h2>
+                    <p class="section-desc">Things I've built end to end. Each one links to the code.</p>
                 </div>
-            </section>
 
-            <!-- Projects (V1 style) -->
-            <section class="section" id="projects">
-                <div class="container">
-                    <div class="reveal">
-                        <div class="section-label">// 01 — Projects</div>
-                        <h2 class="section-title"><span>Case Files</span></h2>
-                        <p class="section-desc">Real projects with real problems. Not tutorials. Not clones. Just work.</p>
-                    </div>
-
-                    <div class="projects-grid">
-                        <!-- Grid Stability ML -->
-                        <div class="project-card reveal d1" data-project="0">
-                            <div class="project-img-wrapper">
-                                <img src="Assets/images/grid.png" alt="Grid Stability ML" class="project-img" loading="lazy">
-                            </div>
-                            <div class="project-body">
-                                <span class="project-tag tag-ml">Machine Learning</span>
-                                <h3 class="project-name">Grid Stability Predictor</h3>
-                                <p class="project-what">An ML classification model that predicts power grid stability — because blackouts are expensive.</p>
-                                <p class="project-learned">"Yes, I debugged the data pipeline for 2 hours. It was a missing comma."</p>
-                                <div class="project-stack">
-                                    <span class="tech-chip">Python</span>
-                                    <span class="tech-chip">scikit-learn</span>
-                                    <span class="tech-chip">pandas</span>
-                                    <span class="tech-chip">numpy</span>
-                                </div>
-                                <div class="project-link-row">
-                                    <a href="https://gridstabilizer.streamlit.app/" class="project-link demo">
-                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
-                                        Demo
-                                    </a>
-                                    <a href="https://github.com/Baboosh617/Grid" class="project-link gh">
-                                        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
-                                        GitHub
-                                    </a>
-                                </div>
+                <div class="projects-grid">
+                    <article class="project-card reveal">
+                        <div class="project-img-wrapper">
+                            <img src="Assets/images/grid.png" alt="Grid Stability Predictor Streamlit app" class="project-img" width="1366" height="768" loading="lazy">
+                        </div>
+                        <div class="project-body">
+                            <span class="project-tag tag-ml">Machine learning</span>
+                            <h3 class="project-name">Grid Stability Predictor</h3>
+                            <p class="project-what">A classification model that predicts power grid stability from electrical parameters, served as a Streamlit app. Grid instability causes cascading blackouts; catching it early is cheaper than recovering from it. 98.7% accuracy on held-out test data.</p>
+                            <p class="project-learned">Data cleaning took longer than modelling. One pipeline bug took 2 hours. It was a missing comma.</p>
+                            <ul class="project-stack" aria-label="Tech stack">
+                                <li>Python</li><li>scikit-learn</li><li>pandas</li><li>numpy</li><li>Streamlit</li>
+                            </ul>
+                            <div class="project-link-row">
+                                <a href="https://gridstabilizer.streamlit.app/" class="project-link demo" target="_blank" rel="noopener">Live demo <span aria-hidden="true">↗</span></a>
+                                <a href="https://github.com/Baboosh617/Grid" class="project-link gh" target="_blank" rel="noopener">Source <span aria-hidden="true">↗</span></a>
                             </div>
                         </div>
+                    </article>
 
-                        <!-- Nexus Canvas -->
-                        <div class="project-card reveal d2" data-project="1">
-                            <div class="project-img-wrapper">
-                                <img src="https://image.qwenlm.ai/public_source/e045a0f4-94f6-462d-a003-16e1ee9e9e87/19d365942-b64a-4be6-b902-a50aab6ee8c6.png" alt="Nexus Canvas" class="project-img" loading="lazy">
-                            </div>
-                            <div class="project-body">
-                                <span class="project-tag tag-js">JavaScript</span>
-                                <h3 class="project-name">Nexus Canvas</h3>
-                                <p class="project-what">An interactive canvas app with physics-based geometry and real-time controls — built to push past DOM basics.</p>
-                                <p class="project-learned">"requestAnimationFrame is a gift and a curse."</p>
-                                <div class="project-stack">
-                                    <span class="tech-chip">JavaScript</span>
-                                    <span class="tech-chip">HTML5 Canvas</span>
-                                    <span class="tech-chip">CSS3</span>
-                                    <span class="tech-chip">OOP</span>
-                                </div>
-                                <div class="project-link-row">
-                                    <a href="#" class="project-link demo">
-                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
-                                        Demo
-                                    </a>
-                                    <a href="#" class="project-link gh">
-                                        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
-                                        GitHub
-                                    </a>
-                                </div>
+                    <article class="project-card reveal">
+                        <div class="project-img-wrapper">
+                            <img src="Assets/images/podzilla.jpg" alt="Podzilla website hero section" class="project-img" width="1280" height="720" loading="lazy">
+                        </div>
+                        <div class="project-body">
+                            <span class="project-tag tag-web">Web</span>
+                            <h3 class="project-name">Podzilla</h3>
+                            <p class="project-what">A one-page website for a friends' podcast on anime, gaming and movies, with a hero slider, topic sections and a contact form.</p>
+                            <ul class="project-stack" aria-label="Tech stack">
+                                <li>HTML</li><li>CSS</li><li>jQuery</li>
+                            </ul>
+                            <div class="project-link-row">
+                                <a href="https://baboosh617.github.io/Podzilla/" class="project-link demo" target="_blank" rel="noopener">Live site <span aria-hidden="true">↗</span></a>
+                                <a href="https://github.com/Baboosh617/Podzilla" class="project-link gh" target="_blank" rel="noopener">Source <span aria-hidden="true">↗</span></a>
                             </div>
                         </div>
-                    </div>
-                </div>
-            </section>
+                    </article>
 
-            <!-- Skills (V2) -->
-            <section id="skills" aria-labelledby="skills-heading">
-                <div class="container">
-                    <h2 class="section-title" id="skills-heading"><span>System Diagnostics</span></h2>
-                    <div class="skills-grid">
-                        <div class="skill-category">
-                            <h3><i class='bx bx-code-alt'></i> Frontend</h3>
-                            <div class="skill-bar" data-honesty="HTML5: 97% (Semantic warrior.)">
-                                <div class="skill-name"><strong>HTML5</strong><span class="percent">97%</span></div>
-                                <div class="progress-track"><div class="progress-fill" style="width:97%"></div></div>
-                                <div class="honesty-tooltip">HTML5: 97% (Semantic warrior.)</div>
-                            </div>
-                            <div class="skill-bar" data-honesty="CSS3: 90% (Flexbox whispers my name.)">
-                                <div class="skill-name"><strong>CSS3</strong><span class="percent">90%</span></div>
-                                <div class="progress-track"><div class="progress-fill" style="width:90%"></div></div>
-                                <div class="honesty-tooltip">CSS3: 90% (Flexbox whispers my name.)</div>
-                            </div>
-                            <div class="skill-bar" data-honesty="JavaScript: 85% (I debug more than I write 😑)">
-                                <div class="skill-name"><strong>JavaScript</strong><span class="percent">85%</span></div>
-                                <div class="progress-track"><div class="progress-fill" style="width:85%"></div></div>
-                                <div class="honesty-tooltip">JS: 85% (I debug more than I write 😑)</div>
-                            </div>
-                            <div class="skill-bar" data-honesty="React: Loading… ⏳">
-                                <div class="skill-name"><strong>React</strong><span class="percent">30%</span></div>
-                                <div class="progress-track"><div class="progress-fill" style="width:30%"></div></div>
-                                <div class="honesty-tooltip">React: ⏳ Loading… (I'm learning)</div>
+                    <article class="project-card reveal">
+                        <div class="project-img-wrapper">
+                            <img src="Assets/images/Pythagora.png" alt="Pythagora geometry calculator with the shape picker open and a circle preview" class="project-img" width="1366" height="768" loading="lazy">
+                        </div>
+                        <div class="project-body">
+                            <span class="project-tag tag-desktop">Desktop app</span>
+                            <h3 class="project-name">Pythagora</h3>
+                            <p class="project-what">A desktop geometry calculator for 8 shapes, with live SVG previews, saved history, and light and dark themes.</p>
+                            <ul class="project-stack" aria-label="Tech stack">
+                                <li>Python</li><li>PyQt5</li>
+                            </ul>
+                            <div class="project-link-row">
+                                <a href="https://github.com/Baboosh617/Pythagora" class="project-link gh" target="_blank" rel="noopener">Source <span aria-hidden="true">↗</span></a>
                             </div>
                         </div>
-                        <div class="skill-category">
-                            <h3><i class='bx bx-server'></i> Backend & Systems</h3>
-                            <div class="skill-bar" data-honesty="Python: 80% (I speak snake.)">
-                                <div class="skill-name"><strong>Python</strong><span class="percent">80%</span></div>
-                                <div class="progress-track"><div class="progress-fill" style="width:80%"></div></div>
-                                <div class="honesty-tooltip">Python: 80% (I speak snake.)</div>
-                            </div>
-                            <div class="skill-bar" data-honesty="Django: 90% (I dream in ORM.)">
-                                <div class="skill-name"><strong>Django</strong><span class="percent">90%</span></div>
-                                <div class="progress-track"><div class="progress-fill" style="width:90%"></div></div>
-                                <div class="honesty-tooltip">Django: 90% (I dream in ORM.)</div>
+                    </article>
+
+                    <article class="project-card reveal">
+                        <div class="project-img-wrapper">
+                            <img src="Assets/images/Gitbro.png" alt="Gitbro showing the torvalds profile and top repositories by stars" class="project-img" width="1366" height="768" loading="lazy">
+                        </div>
+                        <div class="project-body">
+                            <span class="project-tag tag-kotlin">Kotlin</span>
+                            <h3 class="project-name">Gitbro</h3>
+                            <p class="project-what">A desktop GitHub profile viewer: search any user to see their profile and top repos by stars. Built on the GitHub REST API, with an Android port in Jetpack Compose.</p>
+                            <ul class="project-stack" aria-label="Tech stack">
+                                <li>Kotlin</li><li>Swing</li><li>Jetpack Compose</li><li>GitHub REST API</li>
+                            </ul>
+                            <div class="project-link-row">
+                                <a href="https://github.com/Baboosh617/Gitbro" class="project-link gh" target="_blank" rel="noopener">Source <span aria-hidden="true">↗</span></a>
                             </div>
                         </div>
-                        <div class="skill-category">
-                            <h3><i class='bx bx-brain'></i> AI / ML</h3>
-                            <div class="skill-bar" data-honesty="Machine Learning: 60% (Not magic yet.)">
-                                <div class="skill-name"><strong>ML</strong><span class="percent">60%</span></div>
-                                <div class="progress-track"><div class="progress-fill" style="width:60%"></div></div>
-                                <div class="honesty-tooltip">ML: 60% – In progress. Not magic yet.</div>
-                            </div>
-                            <div class="skill-bar" data-honesty="Data Analysis: 70% (Pandas is my flatmate.)">
-                                <div class="skill-name"><strong>Data Analysis</strong><span class="percent">70%</span></div>
-                                <div class="progress-track"><div class="progress-fill" style="width:70%"></div></div>
-                                <div class="honesty-tooltip">Data: 70% (Pandas is my flatmate.)</div>
-                            </div>
-                        </div>
-                        <div class="skill-category">
-                            <h3><i class='bx bx-chip'></i> Hardware & Extras</h3>
-                            <div class="skill-bar" data-honesty="Kotlin: 20% (Soon™)">
-                                <div class="skill-name"><strong>Kotlin</strong><span class="percent">20%</span></div>
-                                <div class="progress-track"><div class="progress-fill" style="width:20%"></div></div>
-                                <div class="honesty-tooltip">Kotlin: 20% (Soon™)</div>
-                            </div>
-                            <div class="skill-bar" data-honesty="Arduino: 50% (I make LEDs blink.)">
-                                <div class="skill-name"><strong>Arduino</strong><span class="percent">50%</span></div>
-                                <div class="progress-track"><div class="progress-fill" style="width:50%"></div></div>
-                                <div class="honesty-tooltip">Arduino: 50% (I make LEDs blink.)</div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <!-- Thinking (V2) -->
-            <section id="thinking" aria-labelledby="thinking-heading">
-                <div class="container">
-                    <h2 class="section-title" id="thinking-heading"><span>How I Approach Problems</span></h2>
-                    <div class="think-grid">
-                        <article class="think-card fade-hidden">
-                            <h3><i class='bx bx-search-alt'></i> 1. Understand the system</h3>
-                            <p>I map the problem first. No code until the logic is clear.</p>
-                        </article>
-                        <article class="think-card fade-hidden">
-                            <h3><i class='bx bx-git-branch'></i> 2. Break it into parts</h3>
-                            <p>Each piece is isolated, tested, then reassembled.</p>
-                        </article>
-                        <article class="think-card fade-hidden">
-                            <h3><i class='bx bx-refresh'></i> 3. Iterate until stable</h3>
-                            <p>Ship early, refine based on feedback, no premature perfection.</p>
-                        </article>
-                    </div>
-                </div>
-            </section>
-
-            <!-- Contact (V1 terminal style) -->
-            <section class="section contact-section" id="contact">
-                <div class="container">
-                    <div class="contact-inner reveal">
-                        <div class="section-label" style="text-align:center;">// 04 — Contact</div>
-                        <h2 class="section-title" style="text-align:center;"><span>Contact Terminal</span></h2>
-                        <p class="section-desc" style="margin:0 auto;text-align:center;">Type <code style="color:var(--accent);">help</code> to see available commands.</p>
-
-                        <div class="contact-links">
-                            <a href="mailto:babasmuhammad617@gmail.com" class="contact-link">
-                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
-                                Email
-                            </a>
-                            <a href="https://github.com/baboosh617" class="contact-link" target="_blank" rel="noopener">
-                                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
-                                GitHub
-                            </a>
-                            <a href="#" class="contact-link" target="_blank" rel="noopener">
-                                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
-                                LinkedIn
-                            </a>
-                        </div>
-
-                        <p class="contact-cta">I respond within 24 hours. Probably.</p>
-
-                        <button class="terminal-toggle" id="termToggle">
-                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="4 17 10 11 4 5"></polyline><line x1="12" y1="19" x2="20" y2="19"></line></svg>
-                            Open Terminal
-                        </button>
-
-                        <div class="terminal-wrap" id="termWrap">
-                            <div class="terminal">
-                                <div class="terminal-bar">
-                                    <span class="terminal-dot r"></span>
-                                    <span class="terminal-dot y"></span>
-                                    <span class="terminal-dot g"></span>
-                                    <span class="terminal-bar-title">contact@ibrahim — bash</span>
-                                </div>
-                                <div class="terminal-body" id="termBody">
-                                    <div id="termOutput"></div>
-                                    <div class="term-prompt">
-                                        <span class="term-prefix">guest@ibrahim:~$</span>
-                                        <input type="text" class="term-input" id="termInput" placeholder="type help" autocomplete="off" spellcheck="false">
-                                        <span class="term-cursor"></span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-        </main>
-
-        <footer>
-            <p>&copy; 2025 Muhammad Ibrahim. All systems operational.</p>
-        </footer>
-    </div>
-
-    <!-- Modal (V1) -->
-    <div class="modal-overlay" id="modalOverlay">
-        <div class="modal" id="modal">
-            <button class="modal-close" id="modalClose">&times;</button>
-            <img src="" alt="" class="modal-img" id="modalImg">
-            <div class="modal-body">
-                <span class="modal-tag" id="modalTag"></span>
-                <h2 class="modal-title" id="modalTitle"></h2>
-                <div class="modal-section">
-                    <div class="modal-section-label">What</div>
-                    <div class="modal-section-text" id="modalWhat"></div>
-                </div>
-                <div class="modal-section">
-                    <div class="modal-section-label">Why</div>
-                    <div class="modal-section-text" id="modalWhy"></div>
-                </div>
-                <div class="modal-section">
-                    <div class="modal-section-label">What I Learned</div>
-                    <div class="modal-section-text" id="modalLearned"></div>
-                </div>
-                <div class="modal-stack" id="modalStack"></div>
-                <div class="modal-actions">
-                    <a href="#" class="btn" id="modalDemo" style="display:inline-flex;align-items:center;gap:8px;">
-                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
-                        Live Demo
-                    </a>
-                    <a href="#" class="btn" id="modalGh" style="background:transparent;color:var(--text);border:1px solid var(--border-light);display:inline-flex;align-items:center;gap:8px;">
-                        <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
-                        GitHub
-                    </a>
+                    </article>
                 </div>
             </div>
-        </div>
-    </div>
+        </section>
+
+        <!-- Stack -->
+        <section class="section" id="stack" aria-labelledby="stack-heading">
+            <div class="container">
+                <div class="section-head reveal">
+                    <p class="section-label">// 02 — Stack</p>
+                    <h2 class="section-title" id="stack-heading">What I work with</h2>
+                    <p class="section-desc">No made-up percentages. The first group is my day-to-day, and the others are tools I've shipped something with.</p>
+                </div>
+                <div class="stack-grid">
+                    <div class="stack-group stack-primary reveal">
+                        <h3>Backend</h3>
+                        <ul><li>Python</li><li>Django</li><li>FastAPI</li><li>PostgreSQL</li><li>Redis</li><li>Celery</li><li>Docker</li></ul>
+                        <p class="stack-note">Where I spend most of my time.</p>
+                    </div>
+                    <div class="stack-group reveal">
+                        <h3>Frontend</h3>
+                        <ul><li>JavaScript</li><li>HTML</li><li>CSS</li><li>jQuery</li></ul>
+                        <p class="stack-note">I debug more than I write.</p>
+                    </div>
+                    <div class="stack-group reveal">
+                        <h3>Data &amp; ML</h3>
+                        <ul><li>scikit-learn</li><li>pandas</li><li>numpy</li><li>matplotlib</li><li>Streamlit</li></ul>
+                        <p class="stack-note">Pandas is my flatmate.</p>
+                    </div>
+                    <div class="stack-group reveal">
+                        <h3>Desktop, mobile &amp; hardware</h3>
+                        <ul><li>PyQt5</li><li>Kotlin</li><li>Swing</li><li>Jetpack Compose</li><li>Arduino</li></ul>
+                        <p class="stack-note">I make LEDs blink.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Approach -->
+        <section class="section" id="approach" aria-labelledby="approach-heading">
+            <div class="container">
+                <div class="section-head reveal">
+                    <p class="section-label">// 03 — Approach</p>
+                    <h2 class="section-title" id="approach-heading">How I approach problems</h2>
+                </div>
+                <ol class="think-grid">
+                    <li class="think-card reveal">
+                        <span class="think-num">01</span>
+                        <h3>Understand the system</h3>
+                        <p>Map the problem first. No code until the logic is clear.</p>
+                    </li>
+                    <li class="think-card reveal">
+                        <span class="think-num">02</span>
+                        <h3>Break it into parts</h3>
+                        <p>Isolate each piece, test it, then put them back together.</p>
+                    </li>
+                    <li class="think-card reveal">
+                        <span class="think-num">03</span>
+                        <h3>Iterate until stable</h3>
+                        <p>Ship early, refine on real feedback, skip premature perfection.</p>
+                    </li>
+                </ol>
+            </div>
+        </section>
+
+        <!-- Contact -->
+        <section class="section contact-section" id="contact" aria-labelledby="contact-heading">
+            <div class="container">
+                <div class="contact-inner reveal">
+                    <p class="section-label">// 04 — Contact</p>
+                    <h2 class="section-title" id="contact-heading">Let's talk</h2>
+                    <p class="section-desc">Open to backend and full-stack roles, freelance builds, and interesting problems. Email is fastest.</p>
+
+                    <div class="contact-links">
+                        <a href="mailto:babasmuhammad617@gmail.com" class="contact-link contact-primary">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                            babasmuhammad617@gmail.com
+                        </a>
+                        <a href="https://github.com/Baboosh617" class="contact-link" target="_blank" rel="noopener">
+                            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+                            GitHub
+                        </a>
+                        <a href="https://twitter.com/baboosh315" class="contact-link" target="_blank" rel="noopener">
+                            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+                            @baboosh315
+                        </a>
+                    </div>
+
+                    <button class="terminal-toggle" id="termToggle" aria-expanded="false" aria-controls="termWrap">
+                        <span aria-hidden="true">&gt;_</span> <span id="termToggleLabel">Or use the terminal</span>
+                    </button>
+
+                    <div class="terminal-wrap" id="termWrap" hidden>
+                        <div class="terminal">
+                            <div class="terminal-bar" aria-hidden="true">
+                                <span class="terminal-dot r"></span>
+                                <span class="terminal-dot y"></span>
+                                <span class="terminal-dot g"></span>
+                                <span class="terminal-bar-title">guest@ibrahim — bash</span>
+                            </div>
+                            <div class="terminal-body" id="termBody">
+                                <div id="termOutput" aria-live="polite"></div>
+                                <div class="term-prompt">
+                                    <label class="term-prefix" for="termInput">guest@ibrahim:~$</label>
+                                    <input type="text" class="term-input" id="termInput" placeholder="type help" autocomplete="off" autocapitalize="off" spellcheck="false">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; <span id="year">2026</span> Muhammad Ibrahim Shehu. All systems operational.</p>
+    </footer>
 
     <script>
         // ===== CONSOLE EASTER EGG =====
         console.log('%c👋 Hey. Curious one.', 'color: #00d4ff; font-size: 18px; font-weight: bold;');
-        console.log('%cYou might like my GitHub.', 'color: #888; font-size: 14px;');
-        console.log('%c→ https://github.com/baboosh617', 'color: #34d399; font-size: 12px;');
+        console.log('%cTry the terminal in the contact section, or the Konami code.', 'color: #888; font-size: 14px;');
 
-        // ===== LOADING SEQUENCE (V2) =====
-        window.addEventListener('load', () => {
-            const loader = document.getElementById('loader');
-            const percentEl = document.getElementById('loader-percent');
-            const progressFill = document.getElementById('progress-fill');
-            const main = document.getElementById('main-content');
-            let percent = 0;
-            const interval = setInterval(() => {
-                percent++;
-                percentEl.textContent = percent;
-                progressFill.style.width = percent + '%';
-                if (percent >= 100) {
-                    clearInterval(interval);
-                    setTimeout(() => {
-                        loader.classList.add('hidden');
-                        main.style.opacity = '1';
-                    }, 150);
-                }
-            }, 25);
-        });
+        document.getElementById('year').textContent = new Date().getFullYear();
 
-        // ===== FADE-IN ON SCROLL (V2) =====
-        const faders = document.querySelectorAll('.fade-hidden');
-        const appearObserver = new IntersectionObserver((entries, obs) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('fade-visible');
-                    obs.unobserve(entry.target);
-                }
-            });
-        }, { threshold: 0.1 });
-        faders.forEach(el => appearObserver.observe(el));
-
-        // ===== SCROLL REVEAL (V1) =====
-        function initReveals() {
-            const reveals = document.querySelectorAll('.reveal');
-            const observer = new IntersectionObserver((entries) => {
+        // ===== SCROLL REVEAL =====
+        // Content is visible by default; .reveal only hides it once the `js` class is on <html>.
+        const reveals = document.querySelectorAll('.reveal');
+        if ('IntersectionObserver' in window) {
+            const revealObserver = new IntersectionObserver((entries, obs) => {
                 entries.forEach(entry => {
                     if (entry.isIntersecting) {
                         entry.target.classList.add('visible');
-                        observer.unobserve(entry.target);
+                        obs.unobserve(entry.target);
                     }
                 });
             }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
-            reveals.forEach(el => observer.observe(el));
+            reveals.forEach(el => revealObserver.observe(el));
+        } else {
+            reveals.forEach(el => el.classList.add('visible'));
         }
-        // Run after loader finishes
-        setTimeout(initReveals, 2000);
 
-        // ===== SKILL SCAN EFFECT (V2) =====
-        const skillBars = document.querySelectorAll('.skill-bar');
-        const scanObserver = new IntersectionObserver((entries, obs) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('active');
-                    obs.unobserve(entry.target);
-                }
-            });
-        }, { threshold: 0.5 });
-        skillBars.forEach(bar => scanObserver.observe(bar));
-
-        // ===== PROJECT MODAL (V1) =====
-        const projectData = [
-            {
-                img: 'Assets/images/grid.png',
-                tag: 'Machine Learning',
-                tagClass: 'tag-ml',
-                title: 'Grid Stability Predictor',
-                what: 'An ML classification model that predicts power grid stability based on multiple electrical parameters. Built to demonstrate practical application of machine learning to real infrastructure problems.',
-                why: 'Power grid instability causes expensive blackouts. If we can predict it early, we can prevent cascading failures.',
-                learned: 'Data cleaning takes longer than model building. Yes, I debugged the pipeline for 2 hours and it was a missing comma. The model achieved 98.7% accuracy on test data.',
-                stack: ['Python', 'scikit-learn', 'pandas', 'numpy', 'matplotlib'],
-                demo: 'https://gridstabilizer.streamlit.app/',
-                gh: 'https://github.com/Baboosh617/Grid'
-            },
-            {
-                img: 'https://image.qwenlm.ai/public_source/e045a0f4-94f6-462d-a003-16e1ee9e9e87/19d365942-b64a-4be6-b902-a50aab6ee8c6.png',
-                tag: 'JavaScript',
-                tagClass: 'tag-js',
-                title: 'Nexus Canvas',
-                what: 'An interactive canvas application with physics-based geometry, particle systems, and real-time user controls. Built purely with vanilla JavaScript and the Canvas API.',
-                why: 'I wanted to push past DOM manipulation and understand JavaScript at a deeper level — algorithmic thinking, performance optimization, and real-time rendering.',
-                learned: 'requestAnimationFrame is a gift and a curse. Understanding vector math and state management at this level changed how I think about frontend development entirely.',
-                stack: ['JavaScript', 'HTML5 Canvas', 'CSS3', 'OOP'],
-                demo: '#',
-                gh: '#'
-            }
-        ];
-
-        const overlay = document.getElementById('modalOverlay');
-        const modalClose = document.getElementById('modalClose');
-
-        document.querySelectorAll('.project-card').forEach(card => {
-            card.addEventListener('click', function() {
-                const idx = parseInt(this.getAttribute('data-project'));
-                const data = projectData[idx];
-
-                document.getElementById('modalImg').src = data.img;
-                document.getElementById('modalImg').alt = data.title;
-                document.getElementById('modalTag').textContent = data.tag;
-                document.getElementById('modalTag').className = 'modal-tag ' + data.tagClass;
-                document.getElementById('modalTitle').textContent = data.title;
-                document.getElementById('modalWhat').textContent = data.what;
-                document.getElementById('modalWhy').textContent = data.why;
-                document.getElementById('modalLearned').textContent = data.learned;
-                document.getElementById('modalDemo').href = data.demo;
-                document.getElementById('modalGh').href = data.gh;
-
-                const stackEl = document.getElementById('modalStack');
-                stackEl.innerHTML = '';
-                data.stack.forEach(t => {
-                    const chip = document.createElement('span');
-                    chip.className = 'tech-chip';
-                    chip.textContent = t;
-                    stackEl.appendChild(chip);
-                });
-
-                overlay.classList.add('open');
-                document.body.style.overflow = 'hidden';
-            });
-        });
-
-        function closeModal() {
-            overlay.classList.remove('open');
-            document.body.style.overflow = '';
+        // ===== MOBILE MENU =====
+        const menuToggle = document.getElementById('menu-toggle');
+        const navLinks = document.getElementById('nav-links');
+        function setMenu(open) {
+            menuToggle.setAttribute('aria-expanded', open);
+            navLinks.classList.toggle('active', open);
         }
-        modalClose.addEventListener('click', closeModal);
-        overlay.addEventListener('click', e => { if (e.target === overlay) closeModal(); });
-        document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); });
+        menuToggle.addEventListener('click', () => setMenu(menuToggle.getAttribute('aria-expanded') !== 'true'));
+        navLinks.querySelectorAll('a').forEach(link => link.addEventListener('click', () => setMenu(false)));
 
-        // ===== TERMINAL (V1) =====
+        // ===== TERMINAL =====
         (function() {
             const toggle = document.getElementById('termToggle');
+            const toggleLabel = document.getElementById('termToggleLabel');
             const wrap = document.getElementById('termWrap');
             const body = document.getElementById('termBody');
             const input = document.getElementById('termInput');
             const output = document.getElementById('termOutput');
+            const history = [];
+            let historyIdx = 0;
 
-            toggle.addEventListener('click', function() {
-                const isOpen = wrap.classList.contains('open');
-                wrap.classList.toggle('open');
-                toggle.innerHTML = isOpen
-                    ? '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="4 17 10 11 4 5"></polyline><line x1="12" y1="19" x2="20" y2="19"></line></svg> Open Terminal'
-                    : '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="4 17 10 11 4 5"></polyline><line x1="12" y1="19" x2="20" y2="19"></line></svg> Close Terminal';
-                if (!isOpen) {
-                    setTimeout(() => input.focus(), 300);
-                    if (!output.children.length) {
-                        addLine('Welcome. Type "help" for available commands.', 'out');
-                    }
+            const projects = [
+                ['grid',      'Grid Stability Predictor', 'https://github.com/Baboosh617/Grid'],
+                ['podzilla',  'Podzilla',                 'https://github.com/Baboosh617/Podzilla'],
+                ['pythagora', 'Pythagora',                'https://github.com/Baboosh617/Pythagora'],
+                ['gitbro',    'Gitbro',                   'https://github.com/Baboosh617/Gitbro']
+            ];
+
+            const commands = {
+                help: () => ['out',
+                    'Available commands:\n' +
+                    '  whoami      about me\n' +
+                    '  projects    list projects\n' +
+                    '  open <name> open a project repo\n' +
+                    '  stack       what I work with\n' +
+                    '  contact     email address\n' +
+                    '  github      open GitHub\n' +
+                    '  twitter     open Twitter / X\n' +
+                    '  clear       clear the terminal'],
+                whoami: () => ['out', 'Muhammad Ibrahim Shehu\nBackend-leaning full-stack developer\nPython · Django · FastAPI · PostgreSQL'],
+                projects: () => ['out', projects.map(p => `  ${p[0].padEnd(10)} ${p[1]}`).join('\n') + '\n\nType "open <name>" to view one.'],
+                stack: () => ['out', 'Backend:   Python, Django, FastAPI, PostgreSQL, Redis, Celery, Docker\nFrontend:  JavaScript, HTML, CSS, jQuery\nData/ML:   scikit-learn, pandas, numpy\nOther:     PyQt5, Kotlin, Jetpack Compose, Arduino'],
+                contact: () => ['ok', 'babasmuhammad617@gmail.com'],
+                github: () => { window.open('https://github.com/Baboosh617', '_blank', 'noopener'); return ['ok', 'Opening GitHub…']; },
+                twitter: () => { window.open('https://twitter.com/baboosh315', '_blank', 'noopener'); return ['ok', 'Opening Twitter / X…']; },
+                open: (arg) => {
+                    const p = projects.find(p => p[0] === arg);
+                    if (!p) return ['err', arg ? `No project named "${arg}". Try "projects".` : 'Usage: open <name>'];
+                    window.open(p[2], '_blank', 'noopener');
+                    return ['ok', `Opening ${p[1]}…`];
+                },
+                sudo: () => ['err', 'Nice try.'],
+                clear: () => { output.replaceChildren(); return null; }
+            };
+
+            toggle.addEventListener('click', () => {
+                const open = wrap.hidden;
+                wrap.hidden = !open;
+                toggle.setAttribute('aria-expanded', open);
+                toggleLabel.textContent = open ? 'Close terminal' : 'Or use the terminal';
+                if (open) {
+                    if (!output.children.length) addLine('Welcome. Type "help" to see available commands.', 'out');
+                    input.focus();
                 }
             });
 
             function addLine(text, cls) {
                 const line = document.createElement('div');
                 line.className = 'term-line ' + cls;
-                line.style.whiteSpace = 'pre-line';
                 line.textContent = text;
                 output.appendChild(line);
                 body.scrollTop = body.scrollHeight;
             }
 
-            function process(cmd) {
-                const c = cmd.trim().toLowerCase();
-                addLine('guest@ibrahim:~$ ' + cmd, 'out');
-                if (!c) return;
-
-                const cmds = {
-                    help: { type: 'out', text: 'Available commands:\n  help       → show this message\n  contact    → get contact info\n  github     → open GitHub\n  linkedin   → open LinkedIn\n  whoami     → about me\n  projects   → list projects\n  skill      → show skill check\n  clear      → clear terminal' },
-                    contact: { type: 'ok', text: '📧 babasmuhammad617@gmail.com' },
-                    github: { type: 'ok', text: '🔗 Opening GitHub…', action: () => window.open('https://github.com/baboosh617', '_blank') },
-                    linkedin: { type: 'ok', text: '🔗 Opening LinkedIn…', action: () => window.open('#', '_blank') },
-                    whoami: { type: 'out', text: 'Muhammad Ibrahim\nFrontend Developer → AI/ML Engineer\nComputer Engineering student' },
-                    projects: { type: 'out', text: Array.from(projectData, p => `- ${p.title}`).join('\n') },
-                    skill: { type: 'out', text: 'GitHub: https://github.com/baboosh617\nSkills: Frontend, Backend, ML, Python, JavaScript, Django, PostgreSQL' },
-                    clear: { type: 'clear' }
-                };
-
-                const r = cmds[c];
-                if (r) {
-                    if (r.type === 'clear') {
-                        output.innerHTML = '';
-                    } else {
-                        addLine(r.text, r.type);
-                        if (r.action) r.action();
-                    }
-                } else {
-                    addLine('Command not found: ' + c + '. Type "help" for options.', 'err');
-                }
+            function run(raw) {
+                addLine('guest@ibrahim:~$ ' + raw, 'cmd');
+                const [name, ...args] = raw.trim().toLowerCase().split(/\s+/);
+                if (!name) return;
+                const cmd = commands[name];
+                if (!cmd) return addLine(`command not found: ${name}. Type "help" for options.`, 'err');
+                const result = cmd(args.join(' '));
+                if (result) addLine(result[1], result[0]);
             }
 
-            input.addEventListener('keydown', function(e) {
+            input.addEventListener('keydown', e => {
                 if (e.key === 'Enter') {
                     const val = input.value;
                     input.value = '';
-                    process(val);
+                    if (val.trim()) history.push(val);
+                    historyIdx = history.length;
+                    run(val);
+                } else if (e.key === 'ArrowUp' && historyIdx > 0) {
+                    e.preventDefault();
+                    input.value = history[--historyIdx];
+                } else if (e.key === 'ArrowDown') {
+                    e.preventDefault();
+                    historyIdx = Math.min(historyIdx + 1, history.length);
+                    input.value = history[historyIdx] || '';
                 }
             });
         })();
 
         // ===== KONAMI CODE =====
         (function() {
-            const seq = [38,38,40,40,37,39,37,39,66,65];
+            const seq = ['ArrowUp','ArrowUp','ArrowDown','ArrowDown','ArrowLeft','ArrowRight','ArrowLeft','ArrowRight','b','a'];
             let idx = 0;
-            document.addEventListener('keydown', function(e) {
-                if (e.keyCode === seq[idx]) {
-                    idx++;
-                    if (idx === seq.length) {
-                        idx = 0;
-                        console.log('%c🎮 You found the Konami Code!', 'color: #34d399; font-size: 16px; font-weight: bold;');
-                        console.log('%cNow you\'re officially one of us.', 'color: #888; font-size: 12px;');
-                    }
-                } else { idx = 0; }
-            });
-        })();
-
-        // ===== MOBILE MENU (V2) =====
-        const menuToggle = document.getElementById('menu-toggle');
-        const navLinks = document.getElementById('nav-links');
-        menuToggle.addEventListener('click', () => {
-            const expanded = menuToggle.getAttribute('aria-expanded') === 'true';
-            menuToggle.setAttribute('aria-expanded', !expanded);
-            navLinks.classList.toggle('active');
-        });
-        navLinks.querySelectorAll('a').forEach(link => {
-            link.addEventListener('click', () => {
-                navLinks.classList.remove('active');
-                menuToggle.setAttribute('aria-expanded', false);
-            });
-        });
-
-        // ===== RANDOM STATUS MESSAGES (V2) =====
-        const statusMessages = [
-            "System running normally",
-            "Stability improving…",
-            "Minor bugs detected (fixed)",
-            "All cores stable",
-            "Learning rate: optimal",
-            "No anomalies detected"
-        ];
-        const statusText = document.getElementById('status-text');
-        setInterval(() => {
-            const randomMsg = statusMessages[Math.floor(Math.random() * statusMessages.length)];
-            statusText.textContent = randomMsg;
-        }, 4000);
-
-        // ===== SMOOTH SCROLL =====
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function(e) {
-                const href = this.getAttribute('href');
-                if (href === '#') return;
-                const target = document.querySelector(href);
-                if (target) {
-                    e.preventDefault();
-                    const headerH = document.querySelector('.site-header').offsetHeight;
-                    const pos = target.getBoundingClientRect().top + window.pageYOffset - headerH - 20;
-                    window.scrollTo({ top: pos, behavior: 'smooth' });
+            document.addEventListener('keydown', e => {
+                idx = (e.key === seq[idx]) ? idx + 1 : (e.key === seq[0] ? 1 : 0);
+                if (idx === seq.length) {
+                    idx = 0;
+                    document.body.classList.toggle('konami');
+                    console.log('%c🎮 You found the Konami code. Now you\'re officially one of us.', 'color: #34d399; font-size: 14px; font-weight: bold;');
                 }
             });
-        });
+        })();
     </script>
 </body>
 </html>
