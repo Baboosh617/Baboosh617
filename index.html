@@ -27,6 +27,12 @@
 <body>
     <a href="#main" class="skip-link">Skip to main content</a>
 
+    <!-- Loading screen (only shown when JS runs; see .js #loader in style.css) -->
+    <div id="loader" aria-hidden="true">
+        <div class="loader-percent" id="loader-percent">0</div>
+        <div class="loader-track"><div class="loader-fill" id="loader-fill"></div></div>
+    </div>
+
     <header class="site-header">
         <div class="nav-container">
             <a href="#top" class="logo" aria-label="Muhammad Ibrahim Shehu, back to top">MIS<span class="logo-cursor" aria-hidden="true">_</span></a>
@@ -262,6 +268,42 @@
         console.log('%cTry the terminal in the contact section, or the Konami code.', 'color: #888; font-size: 14px;');
 
         document.getElementById('year').textContent = new Date().getFullYear();
+
+        // ===== LOADING SCREEN =====
+        // Counts to 100% over ~2s, but never hides before the page has loaded.
+        // Hard cap of 6s so a slow asset can't trap the visitor behind it.
+        (function() {
+            const loader = document.getElementById('loader');
+            const percentEl = document.getElementById('loader-percent');
+            const fill = document.getElementById('loader-fill');
+            const duration = window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 0 : 2000;
+            let loaded = document.readyState === 'complete';
+            let done = false;
+            const start = performance.now();
+
+            function hide() {
+                if (done) return;
+                done = true;
+                if (!duration) return loader.remove();
+                loader.classList.add('hidden');
+                loader.addEventListener('transitionend', () => loader.remove(), { once: true });
+                setTimeout(() => loader.remove(), 800);
+            }
+
+            function tick(now) {
+                const t = duration ? Math.min(Math.max(now - start, 0) / duration, 1) : 1;
+                // Hold at 99% until the load event fires
+                const pct = Math.floor(t * (loaded ? 100 : 99));
+                percentEl.textContent = pct;
+                fill.style.width = pct + '%';
+                if (pct >= 100) setTimeout(hide, 150);
+                else if (!done) requestAnimationFrame(tick);
+            }
+
+            window.addEventListener('load', () => { loaded = true; });
+            setTimeout(hide, 6000);
+            requestAnimationFrame(tick);
+        })();
 
         // ===== SCROLL REVEAL =====
         // Content is visible by default; .reveal only hides it once the `js` class is on <html>.
