@@ -22,7 +22,14 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" href="style.css">
-    <script>document.documentElement.classList.add('js');</script>
+    <script>
+        document.documentElement.classList.add('js');
+        // Phones, tablets and low-end machines get a static ocean: no GSAP, fish or kraken
+        if (matchMedia('(pointer: coarse), (max-width: 760px)').matches
+            || (navigator.deviceMemory || 8) <= 4 || (navigator.hardwareConcurrency || 8) <= 4) {
+            document.documentElement.classList.add('ocean-lite');
+        }
+    </script>
 </head>
 <body>
     <a href="#main" class="skip-link">Skip to main content</a>
@@ -59,6 +66,16 @@
             </div>
         </div>
         <div class="ocean__bubbles"><span></span><span></span><span></span></div>
+        <!-- light mode only: a flat fish that swims on its own -->
+        <div class="minifish"><div class="minifish__bob">
+            <svg viewBox="0 0 120 50">
+                <path d="M18 25 L2 10 L6 25 L2 40 Z" fill="hsl(160 50% 85%)"/>
+                <path d="M16 25 C34 4 82 2 116 25 C82 48 34 46 16 25 Z" fill="hsl(160 50% 72%)"/>
+                <path d="M30 22 C50 12 86 12 108 22" stroke="hsl(160 50% 92%)" stroke-width="3" fill="none" stroke-linecap="round"/>
+                <path d="M56 30 L66 42 L72 31 Z" fill="hsl(160 50% 60%)"/>
+                <circle cx="98" cy="21" r="3" fill="#0F172A"/>
+            </svg>
+        </div></div>
         <div class="ocean__kraken">
             <svg viewBox="0 0 200 220" fill="none" stroke="#4C3F7A" stroke-width="9" stroke-linecap="round">
                 <g class="kraken__body">
@@ -99,6 +116,11 @@
                         <ellipse class="kraken__pupil" cx="116" cy="88" rx="1.6" ry="6" fill="#0F172A"/>
                     </g>
                 </g>
+            </svg>
+            <!-- light mode only: what the kraken leaves of the fish -->
+            <svg class="kraken-bones" viewBox="0 0 120 40" fill="none" stroke="hsl(160 60% 90%)" stroke-width="2.5" stroke-linecap="round">
+                <path d="M12 20 H96 M30 11 V29 M40 9 V31 M50 8 V32 M60 8 V32 M70 9 V31 M80 11 V29 M12 20 L2 9 M12 20 L2 31 M96 8 L116 20 L96 32 Z"/>
+                <circle cx="104" cy="18" r="2"/>
             </svg>
         </div>
     </div>
@@ -705,9 +727,26 @@
         const krakenSvg = document.querySelector('.ocean__kraken svg');
         krakenSvg.pauseAnimations();
 
+        // Light mode: the flat fish swims on its own (pure CSS). When the contact section comes
+        // into view the kraken surfaces and the fish is left as bones; nothing runs per scroll frame.
+        (function() {
+            if (!document.documentElement.classList.contains('ocean-lite')) return;
+            if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+            if (!('IntersectionObserver' in window)) return;
+            const ocean = document.getElementById('ocean');
+            const kraken = ocean.querySelector('.ocean__kraken');
+            new IntersectionObserver(([entry]) => {
+                const up = entry.isIntersecting;
+                ocean.classList.toggle('is-caught', up);
+                kraken.classList.toggle('is-awake', up);
+                up ? krakenSvg.unpauseAnimations() : krakenSvg.pauseAnimations();
+            }, { rootMargin: '0px 0px -35% 0px' }).observe(document.getElementById('contact'));
+        })();
+
         (function() {
             if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
-            const GSAP = 'https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/';
+            if (document.documentElement.classList.contains('ocean-lite')) return;
+            const GSAP ='https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/';
             const script = name => new Promise((resolve, reject) => {
                 const s = document.createElement('script');
                 s.src = GSAP + name + '.min.js';

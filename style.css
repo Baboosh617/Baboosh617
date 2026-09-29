@@ -320,6 +320,60 @@ ul, ol { list-style: none; }
     .ocean__kraken { --kw: 7rem; opacity: 0.65; }
 }
 
+/* Light mode (phones, tablets, low-end machines; set in <head>): the ocean becomes a still
+   decoration at the top of the page that scrolls away with the hero, so nothing is
+   composited per frame while scrolling. Also drops the header blur, which is costly on phones. */
+.ocean-lite .ocean { position: absolute; bottom: auto; height: 100vh; }
+.ocean-lite .ocean__fish, .ocean-lite .ocean__bubbles, .ocean-lite .ocean__abyss { display: none; }
+.ocean-lite .ocean__lights { height: 100%; }
+.ocean-lite .section-alt { background: var(--bg-alt); }
+.ocean-lite .site-header {
+    background: rgba(15, 23, 42, 0.97);
+    backdrop-filter: none; -webkit-backdrop-filter: none;
+}
+
+/* Light-mode fish and kraken. Both are position: fixed (they escape .ocean, which has no
+   transform) and only ever animate transform/opacity, so the compositor runs them alone. */
+.minifish, .ocean__kraken .kraken-bones { display: none; }
+.ocean-lite .ocean__kraken { display: none; }
+@media (prefers-reduced-motion: no-preference) {
+    .ocean-lite .minifish {
+        display: block; position: fixed; top: 62%; left: 0;
+        width: 4.5rem; opacity: 0.55;
+        animation: miniSwim 26s linear infinite;
+        transition: opacity 0.2s;
+    }
+    .minifish__bob { animation: miniBob 2.4s ease-in-out infinite alternate; }
+    .minifish svg { display: block; width: 100%; height: auto; }
+    /* across, turn, and back */
+    @keyframes miniSwim {
+        0%   { transform: translateX(-6rem) scaleX(1); }
+        48%  { transform: translateX(100vw) scaleX(1); }
+        50%  { transform: translateX(100vw) scaleX(-1); }
+        98%  { transform: translateX(-6rem) scaleX(-1); }
+        100% { transform: translateX(-6rem) scaleX(1); }
+    }
+    @keyframes miniBob { from { transform: translateY(-10px) rotate(-3deg); } to { transform: translateY(10px) rotate(3deg); } }
+
+    .ocean-lite .ocean__kraken {
+        display: block; position: fixed; top: auto; bottom: 0;
+        transform: translateY(110%); visibility: hidden;
+        transition: transform 0.9s var(--ease-out), visibility 0s 0.9s;
+    }
+    .ocean-lite .ocean__kraken.is-awake { transform: none; visibility: visible; transition: transform 0.9s var(--ease-out); }
+    .ocean-lite .kraken__body { animation: none; }
+    .ocean-lite .ocean__kraken.is-awake .kraken__reach { stroke-dashoffset: 0; transition: stroke-dashoffset 0.5s 0.8s; }
+
+    /* the fish is caught: it fades out as the bones appear in the kraken's grip */
+    .ocean-lite .ocean__kraken .kraken-bones {
+        display: block; position: absolute; left: 50%; bottom: calc(100% + var(--kw) * 0.05);
+        width: 90%; transform: translateX(-50%);
+        opacity: 0; transition: opacity 0.2s;
+    }
+    .ocean-lite .ocean.is-caught .minifish { opacity: 0; transition: opacity 0.3s 1.2s; }
+    .ocean-lite .ocean.is-caught .kraken-bones { opacity: 0.6; transition: opacity 0.3s 1.3s; }
+}
+
 /* ===== LOADING SCREEN ===== */
 #loader { display: none; }
 .js #loader {
