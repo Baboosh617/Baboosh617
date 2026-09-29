@@ -128,19 +128,19 @@ ul, ol { list-style: none; }
     background: repeating-conic-gradient(var(--c), var(--c) var(--r), transparent var(--r), transparent calc(var(--r) * 2));
     -webkit-mask-image: radial-gradient(circle at center, #000, transparent 50%);
     mask-image: radial-gradient(circle at center, #000, transparent 50%);
-    animation: raysRotate 180s linear infinite;
 }
-@keyframes raysRotate { to { transform: rotate(360deg); } }
 
-/* drifting specks of light; the container is taller than the viewport so it can parallax upward */
+/* drifting specks of light; the container is taller than the viewport so it can parallax upward.
+   The soft edge is a gradient, not filter: blur(), which would cost a GPU render pass per speck. */
 .ocean__lights { top: 0; left: 0; width: 100%; height: 130%; }
 .ocean__lights span {
-    position: absolute; width: 5px; height: 5px; border-radius: 50%;
-    background: rgba(167, 243, 208, 0.7); filter: blur(1.5px);
+    --c: 167, 243, 208;
+    position: absolute; width: 8px; height: 8px; border-radius: 50%;
+    background: radial-gradient(circle, rgba(var(--c), 0.8) 20%, rgba(var(--c), 0) 70%);
     animation: lightBlink 2.5s var(--d, 0s) infinite alternate;
 }
-.ocean__lights span:nth-child(3n) { background: rgba(125, 211, 252, 0.7); }
-.ocean__lights span:nth-child(4n) { width: 3px; height: 3px; }
+.ocean__lights span:nth-child(3n) { --c: 125, 211, 252; }
+.ocean__lights span:nth-child(4n) { width: 5px; height: 5px; }
 .ocean__lights span:nth-child(1)  { top: 8%;  left: 25%; }
 .ocean__lights span:nth-child(2)  { top: 31%; left: 6%;  --d: 0.2s; }
 .ocean__lights span:nth-child(3)  { top: 46%; left: 18%; --d: 0.35s; }
@@ -161,8 +161,6 @@ ul, ol { list-style: none; }
 .ocean__fish {
     inset: 0; opacity: 0.55;
     perspective: 100rem; perspective-origin: center center;
-    -webkit-mask-image: linear-gradient(180deg, #000 55%, rgba(0, 0, 0, 0.35));
-    mask-image: linear-gradient(180deg, #000 55%, rgba(0, 0, 0, 0.35));
 }
 
 /* the fish: clip-path panels arranged in 3D. --fh is its hue (emerald, like --accent) */
@@ -307,6 +305,9 @@ ul, ol { list-style: none; }
 .kraken__eyes { transform-box: fill-box; transform-origin: center; animation: krakenBlink 4.5s infinite; }
 .kraken__eyes ellipse:not(.kraken__pupil) { filter: drop-shadow(0 0 4px rgba(251, 191, 36, 0.8)); }
 .kraken__reach { stroke-dasharray: 1; stroke-dashoffset: 1; }
+/* asleep (below the fold) until JS adds .is-awake; its SMIL tentacles are paused from JS too */
+.ocean__kraken:not(.is-awake) * { animation-play-state: paused; }
+.ocean.is-live .ocean__kraken:not(.is-awake) { visibility: hidden; }
 @keyframes krakenBob { to { transform: translateY(-5px); } }
 @keyframes krakenBlink { 0%, 92%, 100% { transform: scaleY(1); } 95% { transform: scaleY(0.1); } }
 
@@ -401,36 +402,38 @@ ul, ol { list-style: none; }
 .hero-photo img { width: 100%; height: auto; aspect-ratio: 1; object-fit: cover; }
 
 /* photo floats like it's underwater and tilts toward the cursor (JS sets --tilt-x/-y).
-   Registered so the float can animate and the tilt can ease without transitioning transform. */
-@property --float  { syntax: '<length>'; inherits: false; initial-value: 0px; }
-@property --tilt-x { syntax: '<angle>';  inherits: false; initial-value: 0deg; }
-@property --tilt-y { syntax: '<angle>';  inherits: false; initial-value: 0deg; }
+   The float animates `translate` so it stays on the compositor; the tilt vars are
+   registered so they can ease without transitioning transform. */
+@property --tilt-x { syntax: '<angle>'; inherits: false; initial-value: 0deg; }
+@property --tilt-y { syntax: '<angle>'; inherits: false; initial-value: 0deg; }
 .hero-photo {
-    transform: perspective(900px) rotateX(var(--tilt-x)) rotateY(var(--tilt-y)) translateY(var(--float));
+    transform: perspective(900px) rotateX(var(--tilt-x)) rotateY(var(--tilt-y));
     transition: --tilt-x 0.6s var(--ease-out), --tilt-y 0.6s var(--ease-out);
     animation: photoFloat 6s ease-in-out infinite alternate;
 }
-@keyframes photoFloat { from { --float: -6px; } to { --float: 6px; } }
+@keyframes photoFloat { from { translate: 0 -6px; } to { translate: 0 6px; } }
 
-/* caustics: two blurred stripe sets drifting across each other, like light through water.
-   Each drifts exactly one stripe period (period / sin(angle)) so the loop is seamless. */
+/* caustics: two soft stripe sets drifting across each other, like light through water.
+   Each drifts exactly one stripe period (period / sin(angle)) so the loop is seamless.
+   No blur or blend mode, so the moving layers never need repainting. */
 .hero-photo .hero-caustics {
     position: absolute; inset: 8px; z-index: 2;
     overflow: hidden; pointer-events: none;
-    mix-blend-mode: soft-light; opacity: 0.8;
 }
 .hero-caustics::before, .hero-caustics::after {
     content: ''; position: absolute; inset: -40%;
-    filter: blur(6px);
     animation: causticA 9s linear infinite;
 }
 .hero-caustics::before {
-    background: repeating-linear-gradient(115deg, transparent 0 22px, rgba(167, 243, 208, 0.6) 30px, transparent 40px 64px);
+    background: repeating-linear-gradient(115deg, transparent 0 14px, rgba(167, 243, 208, 0.13) 30px, transparent 46px 64px);
 }
 .hero-caustics::after {
-    background: repeating-linear-gradient(65deg, transparent 0 30px, rgba(125, 211, 252, 0.5) 38px, transparent 48px 80px);
+    background: repeating-linear-gradient(65deg, transparent 0 20px, rgba(125, 211, 252, 0.1) 38px, transparent 56px 80px);
     animation-name: causticB; animation-duration: 13s;
 }
+/* nothing in the hero animates once it's scrolled away (JS toggles .is-offscreen) */
+.hero.is-offscreen::before, .hero.is-offscreen .hero-photo,
+.hero.is-offscreen .hero-caustics::before, .hero.is-offscreen .hero-caustics::after { animation-play-state: paused; }
 @keyframes causticA { to { transform: translateX(70.6px); } }
 @keyframes causticB { to { transform: translateX(-88.3px); } }
 

@@ -23,9 +23,6 @@
 
     <link rel="stylesheet" href="style.css">
     <script>document.documentElement.classList.add('js');</script>
-    <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js" defer></script>
-    <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollTrigger.min.js" defer></script>
-    <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/MotionPathPlugin.min.js" defer></script>
 </head>
 <body>
     <a href="#main" class="skip-link">Skip to main content</a>
@@ -693,13 +690,40 @@
             });
         })();
 
+        // ===== HERO OFFSCREEN =====
+        // Pause the hero's looping animations (grid, photo float, caustics) once it's out of view.
+        if ('IntersectionObserver' in window) {
+            const hero = document.querySelector('.hero');
+            new IntersectionObserver(([entry]) => hero.classList.toggle('is-offscreen', !entry.isIntersecting)).observe(hero);
+        }
+
         // ===== OCEAN =====
         // Scroll-scrubbed dive: the fish swims a motion path across the whole page, rolls and
-        // dives, then fades to a ghostly skeleton at the bottom. GSAP comes from deferred
-        // scripts, which run before DOMContentLoaded; if they fail, only the static layer shows.
-        document.addEventListener('DOMContentLoaded', () => {
+        // dives, then fades to a ghostly skeleton at the bottom. GSAP is fetched only after the
+        // page has loaded, so it never delays first paint or the loader; if it fails to load,
+        // only the static layer shows. The kraken's SMIL tentacles stay paused until it surfaces.
+        const krakenSvg = document.querySelector('.ocean__kraken svg');
+        krakenSvg.pauseAnimations();
+
+        (function() {
             if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
-            if (!window.gsap || !window.ScrollTrigger || !window.MotionPathPlugin) return;
+            const GSAP = 'https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/';
+            const script = name => new Promise((resolve, reject) => {
+                const s = document.createElement('script');
+                s.src = GSAP + name + '.min.js';
+                s.onload = resolve;
+                s.onerror = reject;
+                document.head.appendChild(s);
+            });
+            const fetchGsap = () => script('gsap')
+                .then(() => Promise.all([script('ScrollTrigger'), script('MotionPathPlugin')]))
+                .then(startOcean)
+                .catch(err => console.warn('Ocean backdrop:', err));
+            if (document.readyState === 'complete') fetchGsap();
+            else window.addEventListener('load', fetchGsap, { once: true });
+        })();
+
+        function startOcean() {
             gsap.registerPlugin(ScrollTrigger, MotionPathPlugin);
 
             const ocean = document.getElementById('ocean');
@@ -722,18 +746,25 @@
             ];
 
             // Surface light fades over the hero, the water darkens over the whole page
-            gsap.to('.ocean__rays, .ocean__surface', { opacity: 0, y: -200, ease: 'power2.in',
+            gsap.to('.ocean__rays, .ocean__surface', { autoAlpha: 0, y: -200, ease: 'power2.in',
                 scrollTrigger: { trigger: '.hero', start: 'top top', end: 'bottom top', scrub: 1 } });
             gsap.to('.ocean__abyss', { opacity: 1, ease: 'none', scrollTrigger: { ...page, scrub: 1 } });
             gsap.to('.ocean__lights', { yPercent: -20, ease: 'none', scrollTrigger: { ...page, scrub: 2 } });
 
-            let tl, facing = 1;
+            let tl, facing = 1, awake = false;
 
-            // Head leads in both directions: flip the fish when the scroll direction changes
-            function face(self) {
-                if (self.direction === facing) return;
-                facing = self.direction;
-                gsap.to(fish, { rotationY: facing === -1 ? 180 : 0, duration: 0.4 });
+            function update(self) {
+                // Head leads in both directions: flip the fish when the scroll direction changes
+                if (self.direction !== facing) {
+                    facing = self.direction;
+                    gsap.to(fish, { rotationY: facing === -1 ? 180 : 0, duration: 0.4 });
+                }
+                // Only animate the kraken once it starts to surface (it rises from 79%)
+                if ((self.progress > 0.75) !== awake) {
+                    awake = !awake;
+                    kraken.classList.toggle('is-awake', awake);
+                    awake ? krakenSvg.unpauseAnimations() : krakenSvg.pauseAnimations();
+                }
             }
 
             function build() {
@@ -742,7 +773,7 @@
                 // a points path starts from the fish's current position, so park it on the first point
                 gsap.set(fish, path.shift());
                 gsap.set(kraken, { y: vh - kraken.offsetTop }); // parked just below the viewport
-                tl = gsap.timeline({ scrollTrigger: { ...page, scrub: 1.5, onUpdate: face } })
+                tl = gsap.timeline({ scrollTrigger: { ...page, scrub: 1.5, onUpdate: update } })
                     .to(fish, { motionPath: { path, autoRotate: true }, duration: 9, ease: 'none', immediateRender: true }, 0)
                     .to(fish, { rotationX: 180 }, 1)
                     .to(fish, { rotationX: 0 }, 2.5)
@@ -778,7 +809,7 @@
             document.querySelectorAll('main > section').forEach(section => {
                 ScrollTrigger.create({ trigger: section, start: 'top 60%', onEnter: blowBubbles, onEnterBack: blowBubbles });
             });
-            setTimeout(blowBubbles, 2400); // once the loader has cleared
+            setTimeout(blowBubbles, 800); // just after the fish appears
 
             // Rebuild the path on width changes only; mobile URL bars change the height constantly
             let lastW = window.innerWidth, resizeTimer;
@@ -794,7 +825,7 @@
                     build();
                 }, 250);
             });
-        });
+        }
 
         // ===== MOBILE MENU =====
         const menuToggle = document.getElementById('menu-toggle');
