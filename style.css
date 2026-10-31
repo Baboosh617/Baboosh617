@@ -1,3 +1,8 @@
+/* ===== FONTS ===== */
+@font-face { font-family: 'Redaction 35'; font-weight: 400; font-style: normal; font-display: swap; src: url('Assets/fonts/redaction-35-400-normal.woff2') format('woff2'); }
+@font-face { font-family: 'Redaction 35'; font-weight: 400; font-style: italic; font-display: swap; src: url('Assets/fonts/redaction-35-400-italic.woff2') format('woff2'); }
+@font-face { font-family: 'Redaction 35'; font-weight: 700; font-style: normal; font-display: swap; src: url('Assets/fonts/redaction-35-700-normal.woff2') format('woff2'); }
+
 /* ===== TOKENS =====
    Palette trial: taken from the Next.js portfolio (slate + emerald).
    The previous look was --bg #0a0a0a / --bg-card #141414 / --accent #00d4ff. */
@@ -22,7 +27,8 @@
     --accent-violet: #A78BFA;
     --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
     --mono: 'JetBrains Mono', ui-monospace, monospace;
-    --sans: 'Inter', system-ui, sans-serif;
+    --sans: 'Redaction 35', Georgia, serif;
+    --term: 'Ubuntu Sans', system-ui, sans-serif;
     --header-h: 64px;
     --radius: 14px;
     --radius-sm: 8px;
@@ -798,7 +804,7 @@ a.repo-card:hover .repo-name { color: var(--accent); }
 
 .terminal-toggle {
     display: inline-flex; align-items: center; gap: 8px;
-    font-family: var(--mono); font-size: 0.85rem; color: var(--text-muted);
+    font-family: var(--term); font-size: 0.85rem; color: var(--text-muted);
     background: none; border: 1px dashed var(--border-light);
     padding: 8px 16px; cursor: pointer; transition: color 0.2s, border-color 0.2s;
 }
@@ -815,9 +821,9 @@ a.repo-card:hover .repo-name { color: var(--accent); }
 .terminal-dot.r { background: #ff5f57; }
 .terminal-dot.y { background: #febc2e; }
 .terminal-dot.g { background: #28c840; }
-.terminal-bar-title { font-family: var(--mono); font-size: 0.75rem; color: var(--text-muted); margin-left: 8px; }
+.terminal-bar-title { font-family: var(--term); font-size: 0.75rem; color: var(--text-muted); margin-left: 8px; }
 .terminal-body {
-    padding: 18px 20px; font-family: var(--mono); font-size: 0.85rem;
+    padding: 18px 20px; font-family: var(--term); font-size: 0.85rem;
     min-height: 200px; max-height: 360px; overflow-y: auto;
 }
 .term-line { margin-bottom: 6px; line-height: 1.65; white-space: pre-wrap; word-break: break-word; }
@@ -829,7 +835,7 @@ a.repo-card:hover .repo-name { color: var(--accent); }
 .term-prefix { color: var(--accent); white-space: nowrap; }
 .term-input {
     flex: 1; min-width: 0; background: transparent; border: none; outline: none;
-    color: var(--text); font-family: var(--mono); font-size: 0.85rem; caret-color: var(--accent);
+    color: var(--text); font-family: var(--term); font-size: 0.85rem; caret-color: var(--accent);
 }
 .term-input:focus-visible { outline: none; }
 
