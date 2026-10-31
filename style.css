@@ -24,6 +24,8 @@
     --mono: 'JetBrains Mono', ui-monospace, monospace;
     --sans: 'Inter', system-ui, sans-serif;
     --header-h: 64px;
+    --radius: 14px;
+    --radius-sm: 8px;
 
     /* skill levels */
     --lvl-confident: #10B981;
@@ -81,7 +83,7 @@ ul, ol { list-style: none; }
 .glow { position: relative; }
 .glow::before,
 .glow::after {
-    content: ''; position: absolute; pointer-events: none;
+    content: ''; position: absolute; pointer-events: none; border-radius: inherit;
 }
 .glow::before {
     inset: 0;
@@ -98,6 +100,22 @@ ul, ol { list-style: none; }
 }
 /* keep real content above the wash */
 .glow > * { position: relative; z-index: 1; }
+
+/* ===== ROUNDED BOXES =====
+   The reset on * zeroes every radius, so anything rounded is listed here. .glow boxes can't
+   use overflow: hidden, so their edge-to-edge children carry their own corners. */
+.project-card, .stack-group, .tl-card, .focus-card, .think-card, .about-stat,
+.gh-stat, .gh-card, .repo-card, .terminal, .hero-photo, .service-card, .cert-card { border-radius: var(--radius); }
+
+.chip-row li, .project-stack li, .stack-group li, .tl-tags li, .focus-tags li, .service-tags li,
+.stack-group li::after, .btn, .project-link, .project-tag, .badge,
+.contact-link, .terminal-toggle, .think-num { border-radius: var(--radius-sm); }
+
+.level-legend li::before, .stack-group li::before, .lang-name::before,
+.tl-item::before, .terminal-dot { border-radius: 50%; }
+
+.project-img-wrapper, .terminal-bar { border-radius: calc(var(--radius) - 1px) calc(var(--radius) - 1px) 0 0; }
+.hero-photo img, .hero-photo .hero-caustics { border-radius: calc(var(--radius) - 8px); }
 
 /* ===== OCEAN BACKDROP =====
    Fixed layer behind all content (z-index 0, no pointer events). Scrolling the page is a
@@ -522,7 +540,7 @@ ul, ol { list-style: none; }
 
 /* shared chip look */
 .chip-row { display: flex; flex-wrap: wrap; gap: 8px; }
-.chip-row li, .project-stack li, .stack-group li, .tl-tags li {
+.chip-row li, .project-stack li, .stack-group li, .tl-tags li, .focus-tags li, .service-tags li {
     font-family: var(--mono); font-size: 0.75rem; padding: 4px 10px;
     background: var(--bg-elevated); border: 1px solid var(--border);
     color: var(--text-secondary);
