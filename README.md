@@ -7,6 +7,8 @@ Backend-leaning full-stack developer. I build production-shaped web apps — aut
 - **[Gitbro](https://github.com/Baboosh617/Gitbro)** — desktop GitHub profile viewer: search any user to see their profile and top repos by stars (Kotlin, Swing, GitHub REST API), with an Android port in Jetpack Compose
 - **[Podzilla](https://github.com/Baboosh617/Podzilla)** — one-page website for a friends' podcast on anime, gaming and movies ([live](https://baboosh617.github.io/Podzilla/)) (HTML, CSS, jQuery)
 
-**Stack:** Python (Django, FastAPI) · JavaScript · PostgreSQL · Redis/Celery · Docker
+**Stack:** Python (Django, FastAPI) · JavaScript · PostgreSQL · Redis/Celery · Docker · Zoho · Odoo
+
+**Certifications:** Data Science Essentials with Python and Introduction to Cybersecurity (Cisco Networking Academy, 2026)
 
 🌐 [boosh.netlify.app](https://boosh.netlify.app) · 🐦 [@baboosh315](https://twitter.com/baboosh315)

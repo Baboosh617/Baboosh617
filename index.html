@@ -135,6 +135,7 @@
                 <ul class="nav-links" id="nav-links">
                     <li><a href="#about">About</a></li>
                     <li><a href="#projects">Projects</a></li>
+                    <li><a href="#services">Services</a></li>
                     <li><a href="#stack">Stack</a></li>
                     <li><a href="#journey">Journey</a></li>
                     <li><a href="#github">GitHub</a></li>
@@ -279,11 +280,44 @@
             </div>
         </section>
 
+        <!-- Services -->
+        <section class="section" id="services" aria-labelledby="services-heading">
+            <div class="container">
+                <div class="section-head reveal">
+                    <p class="section-label">// 03 — Services</p>
+                    <h2 class="section-title" id="services-heading">What I can do for you</h2>
+                    <p class="section-desc">The work I take on, for teams and freelance clients.</p>
+                </div>
+                <div class="services-grid">
+                    <article class="service-card glow reveal">
+                        <h3>Backend &amp; API Development</h3>
+                        <p>Django and FastAPI backends with authentication, PostgreSQL and background jobs.</p>
+                        <ul class="service-tags"><li>REST APIs</li><li>Background jobs</li></ul>
+                    </article>
+                    <article class="service-card glow reveal">
+                        <h3>Machine Learning Solutions</h3>
+                        <p>Classification models, from cleaning the data to a deployed app.</p>
+                        <ul class="service-tags"><li>Data cleaning</li><li>Model deployment</li></ul>
+                    </article>
+                    <article class="service-card glow reveal">
+                        <h3>Full-Stack Web Apps</h3>
+                        <p>Complete web apps, with a React frontend on a Python backend.</p>
+                        <ul class="service-tags"><li>Responsive UI</li><li>End-to-end builds</li></ul>
+                    </article>
+                    <article class="service-card glow reveal">
+                        <h3>CRM Setup &amp; Management</h3>
+                        <p>Zoho and Odoo set up around how a business tracks its customers and sales.</p>
+                        <ul class="service-tags"><li>Zoho</li><li>Odoo</li></ul>
+                    </article>
+                </div>
+            </div>
+        </section>
+
         <!-- Stack -->
         <section class="section section-alt" id="stack" aria-labelledby="stack-heading">
             <div class="container">
                 <div class="section-head reveal">
-                    <p class="section-label">// 03 — Stack</p>
+                    <p class="section-label">// 04 — Stack</p>
                     <h2 class="section-title" id="stack-heading">What I work with</h2>
                     <p class="section-desc">No made-up percentages. Each dot is an honest self-assessment; hover a skill to see the label.</p>
                 </div>
@@ -298,6 +332,7 @@
                 <div class="stack-grid">
                     <div class="stack-group stack-primary glow reveal">
                         <h3>Backend</h3>
+                        <p class="stack-note">Where I spend most of my time.</p>
                         <ul>
                             <li data-level="proficient">Python<span class="sr-only">, proficient</span></li>
                             <li data-level="confident">Django<span class="sr-only">, confident</span></li>
@@ -306,20 +341,20 @@
                             <li data-level="growing">Redis<span class="sr-only">, growing</span></li>
                             <li data-level="growing">Celery<span class="sr-only">, growing</span></li>
                         </ul>
-                        <p class="stack-note">Where I spend most of my time.</p>
                     </div>
                     <div class="stack-group glow reveal">
                         <h3>Databases</h3>
+                        <p class="stack-note">PostgreSQL unless there's a reason not to.</p>
                         <ul>
                             <li data-level="proficient">PostgreSQL<span class="sr-only">, proficient</span></li>
                             <li data-level="proficient">SQL<span class="sr-only">, proficient</span></li>
                             <li data-level="confident">SQLite<span class="sr-only">, confident</span></li>
                             <li data-level="growing">MongoDB<span class="sr-only">, growing</span></li>
                         </ul>
-                        <p class="stack-note">PostgreSQL unless there's a reason not to.</p>
                     </div>
                     <div class="stack-group glow reveal">
                         <h3>Frontend</h3>
+                        <p class="stack-note">I debug more than I write.</p>
                         <ul>
                             <li data-level="proficient">JavaScript<span class="sr-only">, proficient</span></li>
                             <li data-level="confident">HTML &amp; CSS<span class="sr-only">, confident</span></li>
@@ -328,10 +363,10 @@
                             <li data-level="proficient">jQuery<span class="sr-only">, proficient</span></li>
                             <li data-level="proficient">Bootstrap<span class="sr-only">, proficient</span></li>
                         </ul>
-                        <p class="stack-note">I debug more than I write.</p>
                     </div>
                     <div class="stack-group glow reveal">
                         <h3>Data &amp; ML</h3>
+                        <p class="stack-note">Pandas is my flatmate.</p>
                         <ul>
                             <li data-level="proficient">scikit-learn<span class="sr-only">, proficient</span></li>
                             <li data-level="proficient">pandas<span class="sr-only">, proficient</span></li>
@@ -341,10 +376,10 @@
                             <li data-level="learning">TensorFlow<span class="sr-only">, learning</span></li>
                             <li data-level="learning">PyTorch<span class="sr-only">, learning</span></li>
                         </ul>
-                        <p class="stack-note">Pandas is my flatmate.</p>
                     </div>
                     <div class="stack-group glow reveal">
                         <h3>Desktop, mobile &amp; hardware</h3>
+                        <p class="stack-note">I make LEDs blink.</p>
                         <ul>
                             <li data-level="proficient">PyQt5<span class="sr-only">, proficient</span></li>
                             <li data-level="learning">Kotlin<span class="sr-only">, learning</span></li>
@@ -352,10 +387,10 @@
                             <li data-level="learning">Jetpack Compose<span class="sr-only">, learning</span></li>
                             <li data-level="growing">Arduino<span class="sr-only">, growing</span></li>
                         </ul>
-                        <p class="stack-note">I make LEDs blink.</p>
                     </div>
-                    <div class="stack-group glow reveal">
+                    <div class="stack-group stack-wide glow reveal">
                         <h3>Tools &amp; ops</h3>
+                        <p class="stack-note">Containers and CI. Orchestration is next.</p>
                         <ul>
                             <li data-level="confident">Git &amp; GitHub<span class="sr-only">, confident</span></li>
                             <li data-level="proficient">Linux<span class="sr-only">, proficient</span></li>
@@ -363,7 +398,36 @@
                             <li data-level="growing">GitHub Actions<span class="sr-only">, growing</span></li>
                             <li data-level="learning">Kubernetes<span class="sr-only">, learning</span></li>
                         </ul>
-                        <p class="stack-note">Containers and CI. Orchestration is next.</p>
+                    </div>
+                    <div class="stack-group glow reveal">
+                        <h3>CRM &amp; business tools</h3>
+                        <p class="stack-note">Customers, pipelines and follow-ups.</p>
+                        <ul>
+                            <li data-level="growing">Zoho<span class="sr-only">, growing</span></li>
+                            <li data-level="growing">Odoo<span class="sr-only">, growing</span></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="certs">
+                    <p class="mini-label reveal">Certifications</p>
+                    <div class="cert-grid">
+                        <article class="cert-card glow reveal">
+                            <img src="Assets/images/cert-data-science.png" alt="Cisco Networking Academy badge for Data Science Essentials with Python" width="72" height="72" loading="lazy">
+                            <div>
+                                <h3>Data Science Essentials with Python</h3>
+                                <p class="cert-issuer">Cisco Networking Academy</p>
+                                <p class="cert-date">Issued <time datetime="2026-10-28">Oct 28, 2026</time></p>
+                            </div>
+                        </article>
+                        <article class="cert-card glow reveal">
+                            <img src="Assets/images/cert-cybersecurity.png" alt="Cisco Networking Academy badge for Introduction to Cybersecurity" width="72" height="72" loading="lazy">
+                            <div>
+                                <h3>Introduction to Cybersecurity</h3>
+                                <p class="cert-issuer">Cisco Networking Academy</p>
+                                <p class="cert-date">Issued <time datetime="2026-10-28">Oct 28, 2026</time></p>
+                            </div>
+                        </article>
                     </div>
                 </div>
             </div>
@@ -373,7 +437,7 @@
         <section class="section" id="journey" aria-labelledby="journey-heading">
             <div class="container">
                 <div class="section-head reveal">
-                    <p class="section-label">// 04 — Journey</p>
+                    <p class="section-label">// 05 — Journey</p>
                     <h2 class="section-title" id="journey-heading">How I got here</h2>
                     <p class="section-desc">The skills built, the projects shipped, and where I'm headed.</p>
                 </div>
@@ -442,7 +506,7 @@
         <section class="section section-alt" id="focus" aria-labelledby="focus-heading">
             <div class="container">
                 <div class="section-head reveal">
-                    <p class="section-label">// 05 — Focus</p>
+                    <p class="section-label">// 06 — Focus</p>
                     <h2 class="section-title" id="focus-heading">What I'm working on</h2>
                     <p class="section-desc">Where my attention is right now.</p>
                 </div>
@@ -450,32 +514,32 @@
                     <article class="focus-card glow reveal">
                         <div class="focus-head"><h3>AI engineering</h3><span class="badge badge-active">Active</span></div>
                         <p>Moving beyond classical ML into neural networks, transformers, and AI-powered applications.</p>
-                        <p class="focus-detail">TensorFlow · PyTorch · LLM integration</p>
+                        <ul class="focus-tags"><li>TensorFlow</li><li>PyTorch</li><li>LLM integration</li></ul>
                     </article>
                     <article class="focus-card glow reveal">
                         <div class="focus-head"><h3>Machine learning</h3><span class="badge badge-deepening">Deepening</span></div>
                         <p>Model evaluation, feature engineering, and deploying ML systems that hold up under real-world data.</p>
-                        <p class="focus-detail">scikit-learn · pandas · Model deployment</p>
+                        <ul class="focus-tags"><li>scikit-learn</li><li>pandas</li><li>Model deployment</li></ul>
                     </article>
                     <article class="focus-card glow reveal">
                         <div class="focus-head"><h3>Backend architecture</h3><span class="badge badge-deepening">Deepening</span></div>
                         <p>Solidifying backend fundamentals: clean code, authentication, optimised queries, background jobs, and RESTful design.</p>
-                        <p class="focus-detail">Django REST · FastAPI · PostgreSQL · Celery</p>
+                        <ul class="focus-tags"><li>Django REST</li><li>FastAPI</li><li>PostgreSQL</li><li>Celery</li></ul>
                     </article>
                     <article class="focus-card glow reveal">
                         <div class="focus-head"><h3>Full-stack development</h3><span class="badge badge-active">Active</span></div>
                         <p>Pairing the backend with modern React and Next.js to build complete applications end to end.</p>
-                        <p class="focus-detail">React · Next.js · TypeScript · Tailwind</p>
+                        <ul class="focus-tags"><li>React</li><li>Next.js</li><li>TypeScript</li><li>Tailwind</li></ul>
                     </article>
                     <article class="focus-card glow reveal">
                         <div class="focus-head"><h3>System design</h3><span class="badge badge-exploring">Exploring</span></div>
                         <p>How large systems are put together: distributed systems, database trade-offs, caching strategies, and API design.</p>
-                        <p class="focus-detail">Distributed systems · API design · Caching</p>
+                        <ul class="focus-tags"><li>Distributed systems</li><li>API design</li><li>Caching</li></ul>
                     </article>
                     <article class="focus-card glow reveal">
                         <div class="focus-head"><h3>Docker &amp; Kubernetes</h3><span class="badge badge-exploring">Exploring</span></div>
                         <p>Containerising applications and learning orchestration, so the code runs the same everywhere it needs to.</p>
-                        <p class="focus-detail">Docker · Kubernetes · CI/CD</p>
+                        <ul class="focus-tags"><li>Docker</li><li>Kubernetes</li><li>CI/CD</li></ul>
                     </article>
                 </div>
             </div>
@@ -485,7 +549,7 @@
         <section class="section" id="approach" aria-labelledby="approach-heading">
             <div class="container">
                 <div class="section-head reveal">
-                    <p class="section-label">// 06 — Approach</p>
+                    <p class="section-label">// 07 — Approach</p>
                     <h2 class="section-title" id="approach-heading">How I approach problems</h2>
                 </div>
                 <ol class="think-grid">
@@ -512,7 +576,7 @@
         <section class="section section-alt" id="github" aria-labelledby="github-heading">
             <div class="container">
                 <div class="section-head reveal">
-                    <p class="section-label">// 07 — GitHub</p>
+                    <p class="section-label">// 08 — GitHub</p>
                     <h2 class="section-title" id="github-heading">Code activity</h2>
                     <p class="section-desc">Live from the GitHub API. No screenshots.</p>
                 </div>
@@ -556,7 +620,7 @@
         <section class="section contact-section" id="contact" aria-labelledby="contact-heading">
             <div class="container">
                 <div class="contact-inner reveal">
-                    <p class="section-label">// 08 — Contact</p>
+                    <p class="section-label">// 09 — Contact</p>
                     <h2 class="section-title" id="contact-heading">Let's talk</h2>
                     <p class="section-desc">Open to software engineering roles, freelance projects, and interesting collaborations. Email is fastest.</p>
 
@@ -1033,7 +1097,7 @@
                     '  clear       clear the terminal'],
                 whoami: () => ['out', 'Muhammad Ibrahim Shehu\nSoftware Engineer & AI/ML Developer\nOpen to new roles and freelance work'],
                 projects: () => ['out', projects.map(p => `  ${p[0].padEnd(10)} ${p[1]}`).join('\n') + '\n\nType "open <name>" to view one.'],
-                stack: () => ['out', 'Backend:   Python, Django, FastAPI, Redis, Celery\nData:      PostgreSQL, SQLite, MongoDB\nFrontend:  JavaScript, TypeScript, React, jQuery\nML:        scikit-learn, pandas, numpy\nOther:     PyQt5, Kotlin, Docker, Arduino'],
+                stack: () => ['out', 'Backend:   Python, Django, FastAPI, Redis, Celery\nData:      PostgreSQL, SQLite, MongoDB\nFrontend:  JavaScript, TypeScript, React, jQuery\nML:        scikit-learn, pandas, numpy\nCRM:       Zoho, Odoo\nOther:     PyQt5, Kotlin, Docker, Arduino'],
                 contact: () => ['ok', 'babasmuhammad617@gmail.com'],
                 github: () => { window.open('https://github.com/Baboosh617', '_blank', 'noopener'); return ['ok', 'Opening GitHub…']; },
                 twitter: () => { window.open('https://twitter.com/baboosh315', '_blank', 'noopener'); return ['ok', 'Opening Twitter / X…']; },
