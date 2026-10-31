@@ -24,6 +24,8 @@
     --mono: 'JetBrains Mono', ui-monospace, monospace;
     --sans: 'Inter', system-ui, sans-serif;
     --header-h: 64px;
+    --radius: 14px;
+    --radius-sm: 8px;
 
     /* skill levels */
     --lvl-confident: #10B981;
@@ -81,7 +83,7 @@ ul, ol { list-style: none; }
 .glow { position: relative; }
 .glow::before,
 .glow::after {
-    content: ''; position: absolute; pointer-events: none;
+    content: ''; position: absolute; pointer-events: none; border-radius: inherit;
 }
 .glow::before {
     inset: 0;
@@ -98,6 +100,22 @@ ul, ol { list-style: none; }
 }
 /* keep real content above the wash */
 .glow > * { position: relative; z-index: 1; }
+
+/* ===== ROUNDED BOXES =====
+   The reset on * zeroes every radius, so anything rounded is listed here. .glow boxes can't
+   use overflow: hidden, so their edge-to-edge children carry their own corners. */
+.project-card, .stack-group, .tl-card, .focus-card, .think-card, .about-stat,
+.gh-stat, .gh-card, .repo-card, .terminal, .hero-photo, .service-card, .cert-card { border-radius: var(--radius); }
+
+.chip-row li, .project-stack li, .stack-group li, .tl-tags li, .focus-tags li, .service-tags li,
+.stack-group li::after, .btn, .project-link, .project-tag, .badge,
+.contact-link, .terminal-toggle, .think-num { border-radius: var(--radius-sm); }
+
+.level-legend li::before, .stack-group li::before, .lang-name::before,
+.tl-item::before, .terminal-dot { border-radius: 50%; }
+
+.project-img-wrapper, .terminal-bar { border-radius: calc(var(--radius) - 1px) calc(var(--radius) - 1px) 0 0; }
+.hero-photo img, .hero-photo .hero-caustics { border-radius: calc(var(--radius) - 8px); }
 
 /* ===== OCEAN BACKDROP =====
    Fixed layer behind all content (z-index 0, no pointer events). Scrolling the page is a
@@ -522,7 +540,7 @@ ul, ol { list-style: none; }
 
 /* shared chip look */
 .chip-row { display: flex; flex-wrap: wrap; gap: 8px; }
-.chip-row li, .project-stack li, .stack-group li, .tl-tags li {
+.chip-row li, .project-stack li, .stack-group li, .tl-tags li, .focus-tags li, .service-tags li {
     font-family: var(--mono); font-size: 0.75rem; padding: 4px 10px;
     background: var(--bg-elevated); border: 1px solid var(--border);
     color: var(--text-secondary);
@@ -573,7 +591,7 @@ ul, ol { list-style: none; }
     font-family: var(--mono); font-size: 0.72rem; color: var(--text-muted); line-height: 1.5;
     border-left: 2px solid var(--border-light); padding-left: 10px; margin-bottom: 12px;
 }
-.project-stack { display: flex; flex-wrap: wrap; gap: 5px; margin: auto 0 14px; padding-top: 4px; }
+.project-stack { display: flex; flex-wrap: wrap; gap: 5px; margin: auto 0 14px; padding-top: 12px; border-top: 1px solid var(--border); }
 .project-stack li { font-size: 0.68rem; padding: 3px 7px; }
 .project-link-row { display: flex; gap: 8px; flex-wrap: wrap; }
 .project-link {
@@ -585,6 +603,17 @@ ul, ol { list-style: none; }
 .project-link.demo:hover { background: rgba(var(--accent-rgb), 0.18); }
 .project-link.gh { color: var(--text-secondary); border: 1px solid var(--border-light); }
 .project-link.gh:hover { border-color: var(--text-secondary); color: var(--text); }
+
+/* ===== SERVICES ===== */
+.services-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
+.service-card {
+    display: flex; flex-direction: column; gap: 12px; padding: 22px;
+    background: var(--bg-card); border: 1px solid var(--border);
+}
+.service-card h3 { font-size: 1.05rem; font-weight: 700; line-height: 1.3; }
+.service-card > p { font-size: 0.88rem; color: var(--text-secondary); }
+.service-tags { display: grid; gap: 8px; margin-top: auto; padding-top: 14px; border-top: 1px solid var(--border); }
+.service-tags li { padding: 8px 12px; }
 
 /* ===== STACK + SKILL LEVELS ===== */
 .level-legend { display: flex; flex-wrap: wrap; gap: 18px; margin-bottom: 28px; }
@@ -601,8 +630,9 @@ ul, ol { list-style: none; }
 
 .stack-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
 .stack-group { background: var(--bg-card); border: 1px solid var(--border); padding: 22px; }
-.stack-group h3 { font-family: var(--mono); font-size: 0.95rem; font-weight: 600; color: var(--text); margin-bottom: 16px; }
-.stack-group ul { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 16px; }
+.stack-primary, .stack-wide { grid-column: span 2; }
+.stack-group h3 { font-family: var(--mono); font-size: 0.95rem; font-weight: 600; color: var(--text); margin-bottom: 8px; }
+.stack-group ul { display: flex; flex-wrap: wrap; gap: 8px; padding-top: 14px; border-top: 1px solid var(--border); }
 .stack-group li {
     position: relative; display: inline-flex; align-items: center; gap: 8px;
     font-size: 0.8rem; padding: 6px 10px; color: var(--text); cursor: default;
@@ -622,7 +652,19 @@ ul, ol { list-style: none; }
 .stack-group li:hover::after { opacity: 1; transform: translate(-50%, 0); }
 .stack-primary { border-color: rgba(var(--accent-rgb), 0.35); }
 .stack-primary h3 { color: var(--accent); }
-.stack-note { font-family: var(--mono); font-size: 0.78rem; color: var(--text-muted); }
+.stack-note { font-family: var(--mono); font-size: 0.78rem; color: var(--text-muted); margin-bottom: 14px; }
+
+/* certifications sit under the skills grid */
+.certs { margin-top: 36px; }
+.cert-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+.cert-card {
+    display: flex; align-items: center; gap: 18px; padding: 20px;
+    background: var(--bg-card); border: 1px solid var(--border);
+}
+.cert-card img { flex-shrink: 0; width: 72px; height: 72px; border-radius: 10px; }
+.cert-card h3 { font-size: 1rem; font-weight: 700; line-height: 1.3; margin-bottom: 4px; }
+.cert-issuer { font-size: 0.85rem; color: var(--text-secondary); }
+.cert-date { font-family: var(--mono); font-size: 0.72rem; color: var(--text-muted); margin-top: 4px; }
 
 /* ===== JOURNEY ===== */
 .timeline { position: relative; max-width: 780px; }
@@ -643,7 +685,7 @@ ul, ol { list-style: none; }
 .tl-flag { color: var(--accent); }
 .tl-card h3 { font-size: 1.05rem; font-weight: 700; margin-bottom: 6px; }
 .tl-card > p:not(.tl-meta) { font-size: 0.9rem; color: var(--text-secondary); margin-bottom: 12px; }
-.tl-tags { display: flex; flex-wrap: wrap; gap: 6px; }
+.tl-tags { display: flex; flex-wrap: wrap; gap: 6px; padding-top: 12px; border-top: 1px solid var(--border); }
 .tl-tags li { font-size: 0.68rem; padding: 2px 8px; color: var(--text-muted); }
 
 /* ===== FOCUS ===== */
@@ -654,11 +696,9 @@ ul, ol { list-style: none; }
 }
 .focus-head { display: flex; justify-content: space-between; align-items: flex-start; gap: 12px; }
 .focus-card h3 { font-size: 1.02rem; font-weight: 700; }
-.focus-card > p:not(.focus-detail) { font-size: 0.88rem; color: var(--text-secondary); }
-.focus-detail {
-    margin-top: auto; padding-top: 12px; border-top: 1px solid var(--border);
-    font-family: var(--mono); font-size: 0.7rem; color: var(--text-muted);
-}
+.focus-card > p { font-size: 0.88rem; color: var(--text-secondary); }
+.focus-tags { display: flex; flex-wrap: wrap; gap: 6px; margin-top: auto; padding-top: 12px; border-top: 1px solid var(--border); }
+.focus-tags li { font-size: 0.68rem; padding: 2px 8px; color: var(--text-muted); }
 .badge {
     flex-shrink: 0; padding: 2px 8px;
     font-family: var(--mono); font-size: 0.64rem; letter-spacing: 1px; text-transform: uppercase;
@@ -674,7 +714,12 @@ ul, ol { list-style: none; }
     transition: border-color 0.3s;
 }
 .think-card:hover { border-color: rgba(var(--accent-rgb), 0.35); }
-.think-num { display: block; font-family: var(--mono); font-size: 0.85rem; color: var(--accent); margin-bottom: 12px; }
+.think-num {
+    display: inline-flex; align-items: center; justify-content: center;
+    width: 36px; height: 36px; margin-bottom: 14px;
+    background: var(--bg-elevated); border: 1px solid var(--border-light);
+    font-family: var(--mono); font-size: 0.8rem; color: var(--accent);
+}
 .think-card h3 { font-size: 1.15rem; font-weight: 700; margin-bottom: 8px; }
 .think-card p { font-size: 0.92rem; color: var(--text-secondary); }
 
@@ -798,9 +843,9 @@ footer {
 /* ===== REVEAL (only hides content when JS is running) ===== */
 .js .reveal { opacity: 0; transform: translateY(20px); transition: opacity 0.6s var(--ease-out), transform 0.6s var(--ease-out); }
 .js .reveal.visible { opacity: 1; transform: none; }
-.projects-grid .reveal:nth-child(4n+2), .stack-grid .reveal:nth-child(3n+2), .focus-grid .reveal:nth-child(3n+2), .think-grid .reveal:nth-child(2) { transition-delay: 0.08s; }
-.projects-grid .reveal:nth-child(4n+3), .stack-grid .reveal:nth-child(3n), .focus-grid .reveal:nth-child(3n), .think-grid .reveal:nth-child(3) { transition-delay: 0.16s; }
-.projects-grid .reveal:nth-child(4n) { transition-delay: 0.24s; }
+.projects-grid .reveal:nth-child(4n+2), .services-grid .reveal:nth-child(4n+2), .stack-grid .reveal:nth-child(3n+2), .focus-grid .reveal:nth-child(3n+2), .think-grid .reveal:nth-child(2) { transition-delay: 0.08s; }
+.projects-grid .reveal:nth-child(4n+3), .services-grid .reveal:nth-child(4n+3), .stack-grid .reveal:nth-child(3n), .focus-grid .reveal:nth-child(3n), .think-grid .reveal:nth-child(3) { transition-delay: 0.16s; }
+.projects-grid .reveal:nth-child(4n), .services-grid .reveal:nth-child(4n) { transition-delay: 0.24s; }
 
 @keyframes blink { 50% { opacity: 0; } }
 
@@ -809,14 +854,16 @@ footer {
 
 /* ===== RESPONSIVE ===== */
 @media (max-width: 1100px) {
-    .projects-grid { grid-template-columns: repeat(2, 1fr); }
+    .projects-grid, .services-grid { grid-template-columns: repeat(2, 1fr); }
 }
 @media (max-width: 900px) {
     .hero-grid, .about-grid, .gh-grid { grid-template-columns: 1fr; }
     .hero-grid { gap: 40px; }
+    .nav-links { gap: 18px; }
     .hero-photo { max-width: 280px; }
     .about-grid { gap: 32px; }
     .stack-grid, .focus-grid { grid-template-columns: repeat(2, 1fr); }
+    .stack-wide { grid-column: auto; }
     .think-grid { grid-template-columns: 1fr; }
     .gh-stats { grid-template-columns: repeat(2, 1fr); }
 }
@@ -833,7 +880,8 @@ footer {
     .nav-links a { font-size: 1.05rem; padding: 8px 0; }
 }
 @media (max-width: 600px) {
-    .projects-grid, .stack-grid, .focus-grid, .repo-grid { grid-template-columns: 1fr; }
+    .projects-grid, .services-grid, .stack-grid, .focus-grid, .repo-grid, .cert-grid { grid-template-columns: 1fr; }
+    .stack-primary { grid-column: auto; }
 }
 @media (max-width: 480px) {
     .container, .nav-container { padding: 0 16px; }
